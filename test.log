@@ -1,0 +1,99 @@
+
+--------------------------audio_test_main: Started!!! --------------------------
+
+
+--------------------------audio_test_main:  http_stream_test() test --------------------------
+[0;32mI (2513328480) AUIDO_MEM: calloc:0x55b0a93152b0, size:64, called:0xa8c6f122[0m
+[0;32mI (2513328480) AUDIO_MEM: malloc:0x55b0a9315300, size:40, called:0xa8c76590[0m
+[0;32mI (2513328480) AUIDO_MEM: calloc:0x55b0a9315330, size:24, called:0xa8c77e85[0m
+[0;32mI (2513328480) AUIDO_MEM: calloc:0x55b0a9315350, size:344, called:0xa8c73e74[0m
+[0;32mI (2513328480) AUDIO_MEM: strdup:0x55b0a93154b0, size:4, called:0xa8c72f85[0m
+[0;32mI (2513328480) AUDIO_MEM: malloc:0x55b0a93154d0, size:40, called:0xa8c76590[0m
+[0;32mI (2513328480) AUIDO_MEM: calloc:0x55b0a9315500, size:80, called:0xa8c6d6c2[0m
+[0;32mI (2513328480) AUDIO_MEM: malloc:0x55b0a9315560, size:432, called:0xa8c7691d[0m
+[0;32mI (2513328480) AUDIO_MEM: strdup:0x55b0a9315720, size:41, called:0xa8c7308c[0m
+[0;32mI (2513328480) AUIDO_MEM: calloc:0x55b0a9315760, size:16, called:0xa8c7912f[0m
+[0;32mI (2513328480) AUIDO_MEM: calloc:0x55b0a9315780, size:344, called:0xa8c73e74[0m
+[0;32mI (2513328480) AUDIO_MEM: strdup:0x55b0a93158e0, size:4, called:0xa8c72f85[0m
+[0;32mI (2513328480) AUDIO_MEM: malloc:0x55b0a9315900, size:40, called:0xa8c76590[0m
+[0;32mI (2513328480) AUIDO_MEM: calloc:0x55b0a9315930, size:80, called:0xa8c6d6c2[0m
+[0;32mI (2513328480) AUDIO_MEM: malloc:0x55b0a9315990, size:432, called:0xa8c7691d[0m
+[0;32mI (2513328480) AUIDO_MEM: free:0x55b0a93158e0, called:0xa8c72f5f[0m
+[0;32mI (2513328480) AUDIO_MEM: strdup:0x55b0a93158e0, size:4, called:0xa8c72f85[0m
+[0;32mI (2513328480) AUIDO_MEM: calloc:0x55b0a9315b50, size:24, called:0xa8c6f300[0m
+[0;32mI (2513328480) AUIDO_MEM: free:0x55b0a93154b0, called:0xa8c72f5f[0m
+[0;32mI (2513328480) AUDIO_MEM: strdup:0x55b0a93154b0, size:5, called:0xa8c72f85[0m
+[0;32mI (2513328480) AUIDO_MEM: calloc:0x55b0a9315b70, size:24, called:0xa8c6f300[0m
+[0;32mI (2513328480) AUIDO_MEM: calloc:0x55b0a9315b90, size:32, called:0xa8c6fb41[0m
+[0;32mI (2513328480) AUDIO_MEM: malloc:0x55b0a9315bc0, size:64, called:0xa8c6ddef[0m
+[0;32mI (2513328480) AUDIO_MEM: malloc:0x55b0a9315c10, size:32, called:0xa8c6ddfd[0m
+[0;32mI (2513328480) AUDIO_MEM: malloc:0x55b0a9315c40, size:32, called:0xa8c6de12[0m
+[0;32mI (2513328480) AUIDO_MEM: calloc:0x55b0a9315c70, size:20480, called:0xa8c6de60[0m
+[0;32mI (2513328480) AUDIO_MEM: malloc:0x55b0a931ac80, size:40, called:0xa8c76590[0m
+[0;32mI (2513328480) AUDIO_PIPELINE: link el->rb, el:0x55b0a9315780, tag:http, rb:0x55b0a9315bc0[0m
+[0;32mI (2513328480) AUIDO_MEM: calloc:0x55b0a931acb0, size:80, called:0xa8c6d6c2[0m
+[0;32mI (2513328480) AUDIO_MEM: strdup:0x55b0a931ad10, size:55, called:0xa8c7308c[0m
+[0;32mI (2513328480) AUIDO_MEM: calloc:0x7f5b7c000b20, size:1024, called:0xa8c72c54[0m
+[0;32mI (2513328480) AUDIO_ELEMENT: [http-0x55b0a9315780] Element task created[0m
+[0;32mI (2513328480) AUIDO_MEM: calloc:0x7f5b74000b20, size:2048, called:0xa8c72c54[0m
+[0;32mI (2513328480) AUDIO_ELEMENT: [fatfs-0x55b0a9315350] Element task created[0m
+[0;32mI (2513328480) AUDIO_PIPELINE: Func:audio_pipeline_run, Line:357, ESWIN_PROTING_TODO :'MEM Total :0 Bytes' is not implemented
+[0m
+[0;32mI (2513328480) AUDIO_ELEMENT: [http] AEL_MSG_CMD_RESUME,state:1[0m
+[0;32mI (2513328480) AUDIO_ELEMENT: [fatfs] AEL_MSG_CMD_RESUME,state:1[0m
+[0;32mI (2513328480) AUDIO_PIPELINE: Pipeline started[0m
+3: 创建网络套接字...
+4: 正在连接远程主机...
+5: 正在发送http下载请求...
+6: 正在解析http响应头...
+
+>>>>http响应头解析成功:<<<<
+	HTTP响应代码: 1077952576
+	HTTP Location: 
+响应码不成功, 远程主机返回: 1077952576
+[0;31mE (2513328503) HTTP_STREAM: Failed to open http stream[0m
+[0;31mE (2513328503) AUDIO_ELEMENT: [http] AEL_STATUS_ERROR_OPEN,-1[0m
+[0;33mW (2513328503) AUDIO_ELEMENT: [http] audio_element_on_cmd_error,7[0m
+[0;33mW (2513328503) AUDIO_ELEMENT: IN-[fatfs] AEL_IO_ABORT[0m
+[0;32mI (2513338481) AUIDO_MEM: free:0x7f5b7c000b20, called:0xa8c72dee[0m
+[0;32mI (2513338481) AUIDO_MEM: free:0x7f5b74000b20, called:0xa8c72dee[0m
+[0;32mI (2513338481) AUIDO_MEM: free:0x55b0a9315b50, called:0xa8c6f45e[0m
+[0;32mI (2513338481) AUIDO_MEM: free:0x55b0a9315b70, called:0xa8c6f45e[0m
+[0;32mI (2513338481) AUIDO_MEM: free:0x55b0a931acb0, called:0xa8c6d930[0m
+[0;33mW (2513338481) AUDIO_PIPELINE: There are no listener registered[0m
+[0;32mI (2513338481) AUIDO_MEM: free:0x55b0a9315c70, called:0xa8c6dfe0[0m
+[0;32mI (2513338481) AUIDO_MEM: free:0x55b0a9315c10, called:0xa8c6e018[0m
+[0;32mI (2513338481) AUIDO_MEM: free:0x55b0a9315c40, called:0xa8c6e051[0m
+[0;32mI (2513338481) AUIDO_MEM: free:0x55b0a931ac80, called:0xa8c765cf[0m
+[0;32mI (2513338481) AUIDO_MEM: free:0x55b0a9315bc0, called:0xa8c6e092[0m
+[0;32mI (2513338481) AUIDO_MEM: free:0x55b0a9315b90, called:0xa8c6ffe8[0m
+[0;32mI (2513338481) AUDIO_PIPELINE: audio_pipeline_unlinked[0m
+[0;32mI (2513338481) AUIDO_MEM: free:0x55b0a9315300, called:0xa8c765cf[0m
+[0;32mI (2513338481) AUIDO_MEM: free:0x55b0a93152b0, called:0xa8c6f2a8[0m
+[0;33mW (2513338481) AUDIO_ELEMENT: [http] Element has not create when AUDIO_ELEMENT_TERMINATE[0m
+[0;32mI (2513338481) AUIDO_MEM: free:0x55b0a9315990, called:0xa8c76fa6[0m
+[0;32mI (2513338481) AUIDO_MEM: free:0x55b0a9315930, called:0xa8c6d930[0m
+[0;32mI (2513338481) AUIDO_MEM: free:0x55b0a9315760, called:0xa8c790ef[0m
+[0;32mI (2513338481) AUIDO_MEM: free:0x55b0a93158e0, called:0xa8c72f5f[0m
+[0;32mI (2513338481) AUIDO_MEM: free:0x55b0a931ad10, called:0xa8c73066[0m
+[0;32mI (2513338481) AUIDO_MEM: free:0x55b0a9315900, called:0xa8c765cf[0m
+[0;32mI (2513338481) AUIDO_MEM: free:0x55b0a9315780, called:0xa8c747d3[0m
+[0;33mW (2513338481) AUDIO_ELEMENT: [fatfs] Element has not create when AUDIO_ELEMENT_TERMINATE[0m
+[0;32mI (2513338481) AUIDO_MEM: free:0x55b0a9315560, called:0xa8c76fa6[0m
+[0;32mI (2513338481) AUIDO_MEM: free:0x55b0a9315500, called:0xa8c6d930[0m
+[0;32mI (2513338481) AUIDO_MEM: free:0x55b0a9315330, called:0xa8c77e4d[0m
+[0;32mI (2513338481) AUIDO_MEM: free:0x55b0a93154b0, called:0xa8c72f5f[0m
+[0;32mI (2513338481) AUIDO_MEM: free:0x55b0a9315720, called:0xa8c73066[0m
+[0;32mI (2513338481) AUIDO_MEM: free:0x55b0a93154d0, called:0xa8c765cf[0m
+[0;32mI (2513338481) AUIDO_MEM: free:0x55b0a9315350, called:0xa8c747d3[0m
+
+End of test memory usage:
+VARIABLE  BEFORE   AFTER
+======== ======== ========
+arena           0    63000
+ordblks         1        9
+uordblks        0     8a30
+fordblks        0    5a5d0
+
+--------------------------audio_test_main:Exiting!!! --------------------------
+

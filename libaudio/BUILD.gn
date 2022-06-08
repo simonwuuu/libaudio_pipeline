@@ -1,0 +1,49 @@
+import(DEST_CONFIG)
+INCLUDE_DIRS = []
+SOURCES = []
+
+LIBAUDIO = "${ROOTDIR}/thirdparty/libaudio"
+
+INCLUDE_DIRS += [
+                "./components/audio_sal/include",
+                "./components/audio_pipeline/include",
+                "./components/audio_stream/include",
+                "./components/eswin-adf-libs/eswin_codec/include/codec",
+                "./components/eswin-adf-libs/eswin_codec/include/processing",
+                "./idf_components/esp_common/include",
+                "./idf_components/log/include",
+                "./components/eswin-adf-libs/eswin_codec/lib/codec/soft_decoder/mp3/include",]
+
+
+SOURCES += string_split(exec_script(run_shell,["--cmd","cd ${LIBAUDIO} && ls","--args","-R ./components/audio_pipeline/*.c"],"trim string"))
+
+SOURCES += string_split(exec_script(run_shell,["--cmd","cd ${LIBAUDIO} && ls","--args","-R ./components/audio_sal/*.c"],"trim string"))
+
+SOURCES += string_split(exec_script(run_shell,["--cmd","cd ${LIBAUDIO} && ls","--args","-R ./components/audio_stream/*.c"],"trim string"))
+
+SOURCES += string_split(exec_script(run_shell,["--cmd","cd ${LIBAUDIO} && ls","--args","-R ./components/eswin-adf-libs/eswin_codec/lib/codec/soft_decoder/mp3/src/*.c"],"trim string"))
+
+SOURCES += string_split(exec_script(run_shell,["--cmd","cd ${LIBAUDIO} && ls","--args","-R ./components/eswin-adf-libs/eswin_codec/lib/codec/*.c"],"trim string"))
+
+SOURCES += string_split(exec_script(run_shell,["--cmd","cd ${LIBAUDIO} && ls","--args","-R ./components/eswin-adf-libs/eswin_codec/lib/processing/*.c"],"trim string"))
+
+SOURCES += string_split(exec_script(run_shell,["--cmd","cd ${LIBAUDIO} && ls","--args","-R ./idf_components/log/*.c"],"trim string"))
+
+SOURCES += string_split(exec_script(run_shell,["--cmd","cd ${LIBAUDIO} && ls","--args","-R ./components/eswin-adf-libs/eswin_codec/lib/codec/mp3/*.c"],"trim string"))
+
+config("build_configs")
+{
+    cflags_c = ["-fno-inline"]
+}
+
+static_library("libaudio")
+{
+    output_name = "audio"
+    sources = SOURCES
+    include_dirs = INCLUDE_DIRS
+    configs += [":build_configs"]
+    if (!defined(kernel_image))
+    {
+        public_deps = ["//build/core:prebuilt"]
+    }
+}

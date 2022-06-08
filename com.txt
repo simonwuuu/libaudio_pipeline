@@ -1,0 +1,1896 @@
+audio_test/audio_mutex_test.c: In function ‘thread_func’:
+audio_test/audio_mutex_test.c:65:20: warning: implicit declaration of function ‘mutex_lock’ [-Wimplicit-function-declaration]
+       int status = mutex_lock(mut);
+                    ^~~~~~~~~~
+audio_test/audio_mutex_test.c:83:11: warning: implicit declaration of function ‘pthread_yield’; did you mean ‘pthread_self’? [-Wimplicit-function-declaration]
+           pthread_yield();
+           ^~~~~~~~~~~~~
+           pthread_self
+audio_test/audio_mutex_test.c:88:16: warning: implicit declaration of function ‘mutex_unlock’; did you mean ‘putc_unlocked’? [-Wimplicit-function-declaration]
+       status = mutex_unlock(mut);
+                ^~~~~~~~~~~~
+                putc_unlocked
+audio_test/audio_mutex_test.c:97:10: warning: ‘return’ with a value, in function returning void
+   return NULL; /* Non-reachable -- needed for some compilers */
+          ^~~~
+audio_test/audio_mutex_test.c:57:13: note: declared here
+ static void thread_func(void *parameter)
+             ^~~~~~~~~~~
+audio_test/audio_mutex_test.c: In function ‘audio_mutex_test’:
+audio_test/audio_mutex_test.c:113:9: warning: implicit declaration of function ‘mutex_create’; did you mean ‘timer_create’? [-Wimplicit-function-declaration]
+   mut = mutex_create();
+         ^~~~~~~~~~~~
+         timer_create
+audio_test/audio_mutex_test.c:113:7: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+   mut = mutex_create();
+       ^
+audio_test/audio_mutex_test.c:119:43: warning: passing argument 3 of ‘pthread_create’ from incompatible pointer type [-Wincompatible-pointer-types]
+   status = pthread_create(&thread1, NULL, thread_func, 1);
+                                           ^~~~~~~~~~~
+In file included from audio_test/audio_mutex_test.c:27:0:
+/usr/include/pthread.h:234:12: note: expected ‘void * (*)(void *)’ but argument is of type ‘void (*)(void *)’
+ extern int pthread_create (pthread_t *__restrict __newthread,
+            ^~~~~~~~~~~~~~
+audio_test/audio_mutex_test.c:119:56: warning: passing argument 4 of ‘pthread_create’ makes pointer from integer without a cast [-Wint-conversion]
+   status = pthread_create(&thread1, NULL, thread_func, 1);
+                                                        ^
+In file included from audio_test/audio_mutex_test.c:27:0:
+/usr/include/pthread.h:234:12: note: expected ‘void * restrict’ but argument is of type ‘int’
+ extern int pthread_create (pthread_t *__restrict __newthread,
+            ^~~~~~~~~~~~~~
+audio_test/audio_mutex_test.c:128:43: warning: passing argument 3 of ‘pthread_create’ from incompatible pointer type [-Wincompatible-pointer-types]
+   status = pthread_create(&thread2, NULL, thread_func, 2);
+                                           ^~~~~~~~~~~
+In file included from audio_test/audio_mutex_test.c:27:0:
+/usr/include/pthread.h:234:12: note: expected ‘void * (*)(void *)’ but argument is of type ‘void (*)(void *)’
+ extern int pthread_create (pthread_t *__restrict __newthread,
+            ^~~~~~~~~~~~~~
+audio_test/audio_mutex_test.c:128:56: warning: passing argument 4 of ‘pthread_create’ makes pointer from integer without a cast [-Wint-conversion]
+   status = pthread_create(&thread2, NULL, thread_func, 2);
+                                                        ^
+In file included from audio_test/audio_mutex_test.c:27:0:
+/usr/include/pthread.h:234:12: note: expected ‘void * restrict’ but argument is of type ‘int’
+ extern int pthread_create (pthread_t *__restrict __newthread,
+            ^~~~~~~~~~~~~~
+audio_test/audio_mutex_test.c:138:3: warning: implicit declaration of function ‘mutex_destroy’; did you mean ‘pthread_mutex_destroy’? [-Wimplicit-function-declaration]
+   mutex_destroy(mut);
+   ^~~~~~~~~~~~~
+   pthread_mutex_destroy
+audio_test/audio_element_test.c: In function ‘_el_process’:
+audio_test/audio_element_test.c:48:5: warning: implicit declaration of function ‘usleep’; did you mean ‘fseek’? [-Wimplicit-function-declaration]
+     usleep(10000);
+     ^~~~~~
+     fseek
+audio_test/audio_element_test.c: In function ‘audio_element’:
+audio_test/audio_element_test.c:74:14: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+     cfg.read = _el_read;
+              ^
+audio_test/audio_element_test.c:75:17: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+     cfg.process = _el_process;
+                 ^
+audio_test/audio_element_test.c:76:15: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+     cfg.write = _el_write;
+               ^
+audio_test/audio_element_test.c: In function ‘audio_element_input_rb’:
+audio_test/audio_element_test.c:106:17: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+     cfg.process = _el_process;
+                 ^
+audio_test/audio_element_test.c:107:15: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+     cfg.write = _el_write;
+               ^
+audio_test/audio_element_test.c: In function ‘audio_element_output_rb’:
+audio_test/audio_element_test.c:138:14: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+     cfg.read = _el_read;
+              ^
+audio_test/audio_element_test.c:139:17: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+     cfg.process = _el_process;
+                 ^
+audio_test/audio_element_test.c: In function ‘audio_element_input_output_rb’:
+audio_test/audio_element_test.c:173:17: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+     cfg.process = _el_process;
+                 ^
+audio_test/audio_queue_test.c: In function ‘sender_thread’:
+audio_test/audio_queue_test.c:67:66: warning: passing argument 4 of ‘audio_queue_send’ makes integer from pointer without a cast [-Wint-conversion]
+       status = audio_queue_send(g_mqfd, msg_buffer, TEST_MSGLEN, NULL);
+                                                                  ^~~~
+In file included from audio_test/audio_queue_test.c:15:0:
+libaudio/components/audio_sal/include/audio_queue.h:73:5: note: expected ‘TickType_t {aka unsigned int}’ but argument is of type ‘void *’
+ int audio_queue_send(mqd_t queue, char *item, size_t msglen, TickType_t wait_time);
+     ^~~~~~~~~~~~~~~~
+audio_test/audio_queue_test.c:81:11: warning: return makes pointer from integer without a cast [-Wint-conversion]
+   return ((uintptr_t)nerrors);
+          ~^~~~~~~~~~~~~~~~~~~
+audio_test/audio_queue_test.c: In function ‘receiver_thread’:
+audio_test/audio_queue_test.c:98:66: warning: passing argument 4 of ‘audio_queue_recv’ makes integer from pointer without a cast [-Wint-conversion]
+       nbytes = audio_queue_recv(g_mqfd, msg_buffer, TEST_MSGLEN, NULL);
+                                                                  ^~~~
+In file included from audio_test/audio_queue_test.c:15:0:
+libaudio/components/audio_sal/include/audio_queue.h:86:5: note: expected ‘TickType_t {aka unsigned int}’ but argument is of type ‘void *’
+ int audio_queue_recv(mqd_t queue, char *item, size_t msglen, TickType_t wait_time);
+     ^~~~~~~~~~~~~~~~
+audio_test/audio_queue_test.c:159:16: warning: passing argument 1 of ‘pthread_exit’ makes pointer from integer without a cast [-Wint-conversion]
+   pthread_exit(((uintptr_t)nerrors));
+                ^
+In file included from audio_test/audio_queue_test.c:10:0:
+/usr/include/pthread.h:243:13: note: expected ‘void *’ but argument is of type ‘long unsigned int’
+ extern void pthread_exit (void *__retval) __attribute__ ((__noreturn__));
+             ^~~~~~~~~~~~
+audio_test/audio_queue_test.c:160:11: warning: return makes pointer from integer without a cast [-Wint-conversion]
+   return ((uintptr_t)nerrors);
+          ~^~~~~~~~~~~~~~~~~~~
+audio_test/audio_queue_test.c: In function ‘audio_queue_test’:
+audio_test/audio_queue_test.c:185:20: warning: passing argument 1 of ‘pthread_exit’ makes pointer from integer without a cast [-Wint-conversion]
+       pthread_exit(1);
+                    ^
+In file included from audio_test/audio_queue_test.c:10:0:
+/usr/include/pthread.h:243:13: note: expected ‘void *’ but argument is of type ‘int’
+ extern void pthread_exit (void *__retval) __attribute__ ((__noreturn__));
+             ^~~~~~~~~~~~
+In file included from libaudio/components/audio_pipeline/include/audio_event_iface.h:30:0,
+                 from audio_test/audio_event_iface_test.c:26:
+audio_test/audio_event_iface_test.c: In function ‘event_on_cmd’:
+audio_test/audio_event_iface_test.c:34:86: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+     ESP_LOGI(TAG, "receive evt msg cmd = %d, source addr = %x, type = %d", msg->cmd, (int)msg->source, msg->source_type);
+                                                                                      ^
+libaudio/idf_components/log/include/esp_log.h:410:137: note: in definition of macro ‘ESP_LOG_LEVEL’
+         if (level==ESP_LOG_ERROR )          { esp_log_write(ESP_LOG_ERROR,      tag, LOG_FORMAT(E, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+                                                                                                                                         ^~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:342:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+audio_test/audio_event_iface_test.c:34:5: note: in expansion of macro ‘ESP_LOGI’
+     ESP_LOGI(TAG, "receive evt msg cmd = %d, source addr = %x, type = %d", msg->cmd, (int)msg->source, msg->source_type);
+     ^~~~~~~~
+audio_test/audio_event_iface_test.c:34:86: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+     ESP_LOGI(TAG, "receive evt msg cmd = %d, source addr = %x, type = %d", msg->cmd, (int)msg->source, msg->source_type);
+                                                                                      ^
+libaudio/idf_components/log/include/esp_log.h:411:137: note: in definition of macro ‘ESP_LOG_LEVEL’
+         else if (level==ESP_LOG_WARN )      { esp_log_write(ESP_LOG_WARN,       tag, LOG_FORMAT(W, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+                                                                                                                                         ^~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:342:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+audio_test/audio_event_iface_test.c:34:5: note: in expansion of macro ‘ESP_LOGI’
+     ESP_LOGI(TAG, "receive evt msg cmd = %d, source addr = %x, type = %d", msg->cmd, (int)msg->source, msg->source_type);
+     ^~~~~~~~
+audio_test/audio_event_iface_test.c:34:86: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+     ESP_LOGI(TAG, "receive evt msg cmd = %d, source addr = %x, type = %d", msg->cmd, (int)msg->source, msg->source_type);
+                                                                                      ^
+libaudio/idf_components/log/include/esp_log.h:412:137: note: in definition of macro ‘ESP_LOG_LEVEL’
+         else if (level==ESP_LOG_DEBUG )     { esp_log_write(ESP_LOG_DEBUG,      tag, LOG_FORMAT(D, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+                                                                                                                                         ^~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:342:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+audio_test/audio_event_iface_test.c:34:5: note: in expansion of macro ‘ESP_LOGI’
+     ESP_LOGI(TAG, "receive evt msg cmd = %d, source addr = %x, type = %d", msg->cmd, (int)msg->source, msg->source_type);
+     ^~~~~~~~
+audio_test/audio_event_iface_test.c:34:86: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+     ESP_LOGI(TAG, "receive evt msg cmd = %d, source addr = %x, type = %d", msg->cmd, (int)msg->source, msg->source_type);
+                                                                                      ^
+libaudio/idf_components/log/include/esp_log.h:413:137: note: in definition of macro ‘ESP_LOG_LEVEL’
+         else if (level==ESP_LOG_VERBOSE )   { esp_log_write(ESP_LOG_VERBOSE,    tag, LOG_FORMAT(V, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+                                                                                                                                         ^~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:342:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+audio_test/audio_event_iface_test.c:34:5: note: in expansion of macro ‘ESP_LOGI’
+     ESP_LOGI(TAG, "receive evt msg cmd = %d, source addr = %x, type = %d", msg->cmd, (int)msg->source, msg->source_type);
+     ^~~~~~~~
+audio_test/audio_event_iface_test.c:34:86: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+     ESP_LOGI(TAG, "receive evt msg cmd = %d, source addr = %x, type = %d", msg->cmd, (int)msg->source, msg->source_type);
+                                                                                      ^
+libaudio/idf_components/log/include/esp_log.h:414:137: note: in definition of macro ‘ESP_LOG_LEVEL’
+         else                                { esp_log_write(ESP_LOG_INFO,       tag, LOG_FORMAT(I, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+                                                                                                                                         ^~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:342:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+audio_test/audio_event_iface_test.c:34:5: note: in expansion of macro ‘ESP_LOGI’
+     ESP_LOGI(TAG, "receive evt msg cmd = %d, source addr = %x, type = %d", msg->cmd, (int)msg->source, msg->source_type);
+     ^~~~~~~~
+In file included from audio_test/fatfs_stream_test.c:26:0:
+audio_test/fatfs_stream_test.c: In function ‘file_size_comparison’:
+libaudio/idf_components/log/include/esp_log.h:265:27: warning: format ‘%llu’ expects argument of type ‘long long unsigned int’, but argument 7 has type ‘uint64_t {aka long unsigned int}’ [-Wformat=]
+ #define LOG_COLOR(COLOR)  "\033[0;" COLOR "m"
+                           ^
+libaudio/idf_components/log/include/esp_log.h:268:27: note: in expansion of macro ‘LOG_COLOR’
+ #define LOG_COLOR_E       LOG_COLOR(LOG_COLOR_RED)
+                           ^~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:282:37: note: in expansion of macro ‘LOG_COLOR_E’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                     ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:410:86: note: in expansion of macro ‘LOG_FORMAT’
+         if (level==ESP_LOG_ERROR )          { esp_log_write(ESP_LOG_ERROR,      tag, LOG_FORMAT(E, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+                                                                                      ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:342:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+audio_test/fatfs_stream_test.c:58:5: note: in expansion of macro ‘ESP_LOGI’
+     ESP_LOGI(TAG, "%s size is %llu, %s size is %llu", file1, size1, file2, size2);
+     ^~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:265:27: warning: format ‘%llu’ expects argument of type ‘long long unsigned int’, but argument 9 has type ‘uint64_t {aka long unsigned int}’ [-Wformat=]
+ #define LOG_COLOR(COLOR)  "\033[0;" COLOR "m"
+                           ^
+libaudio/idf_components/log/include/esp_log.h:268:27: note: in expansion of macro ‘LOG_COLOR’
+ #define LOG_COLOR_E       LOG_COLOR(LOG_COLOR_RED)
+                           ^~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:282:37: note: in expansion of macro ‘LOG_COLOR_E’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                     ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:410:86: note: in expansion of macro ‘LOG_FORMAT’
+         if (level==ESP_LOG_ERROR )          { esp_log_write(ESP_LOG_ERROR,      tag, LOG_FORMAT(E, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+                                                                                      ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:342:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+audio_test/fatfs_stream_test.c:58:5: note: in expansion of macro ‘ESP_LOGI’
+     ESP_LOGI(TAG, "%s size is %llu, %s size is %llu", file1, size1, file2, size2);
+     ^~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:265:27: warning: format ‘%llu’ expects argument of type ‘long long unsigned int’, but argument 7 has type ‘uint64_t {aka long unsigned int}’ [-Wformat=]
+ #define LOG_COLOR(COLOR)  "\033[0;" COLOR "m"
+                           ^
+libaudio/idf_components/log/include/esp_log.h:269:27: note: in expansion of macro ‘LOG_COLOR’
+ #define LOG_COLOR_W       LOG_COLOR(LOG_COLOR_BROWN)
+                           ^~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:282:37: note: in expansion of macro ‘LOG_COLOR_W’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                     ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:411:86: note: in expansion of macro ‘LOG_FORMAT’
+         else if (level==ESP_LOG_WARN )      { esp_log_write(ESP_LOG_WARN,       tag, LOG_FORMAT(W, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+                                                                                      ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:342:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+audio_test/fatfs_stream_test.c:58:5: note: in expansion of macro ‘ESP_LOGI’
+     ESP_LOGI(TAG, "%s size is %llu, %s size is %llu", file1, size1, file2, size2);
+     ^~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:265:27: warning: format ‘%llu’ expects argument of type ‘long long unsigned int’, but argument 9 has type ‘uint64_t {aka long unsigned int}’ [-Wformat=]
+ #define LOG_COLOR(COLOR)  "\033[0;" COLOR "m"
+                           ^
+libaudio/idf_components/log/include/esp_log.h:269:27: note: in expansion of macro ‘LOG_COLOR’
+ #define LOG_COLOR_W       LOG_COLOR(LOG_COLOR_BROWN)
+                           ^~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:282:37: note: in expansion of macro ‘LOG_COLOR_W’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                     ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:411:86: note: in expansion of macro ‘LOG_FORMAT’
+         else if (level==ESP_LOG_WARN )      { esp_log_write(ESP_LOG_WARN,       tag, LOG_FORMAT(W, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+                                                                                      ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:342:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+audio_test/fatfs_stream_test.c:58:5: note: in expansion of macro ‘ESP_LOGI’
+     ESP_LOGI(TAG, "%s size is %llu, %s size is %llu", file1, size1, file2, size2);
+     ^~~~~~~~
+audio_test/fatfs_stream_test.c:58:1: warning: format ‘%llu’ expects argument of type ‘long long unsigned int’, but argument 7 has type ‘uint64_t {aka long unsigned int}’ [-Wformat=]
+     ESP_LOGI(TAG, "%s size is %llu, %s size is %llu", file1, size1, file2, size2);
+ ^
+libaudio/idf_components/log/include/esp_log.h:282:59: note: in definition of macro ‘LOG_FORMAT’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                                           ^~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:342:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+audio_test/fatfs_stream_test.c:58:5: note: in expansion of macro ‘ESP_LOGI’
+     ESP_LOGI(TAG, "%s size is %llu, %s size is %llu", file1, size1, file2, size2);
+     ^~~~~~~~
+audio_test/fatfs_stream_test.c:58:1: warning: format ‘%llu’ expects argument of type ‘long long unsigned int’, but argument 9 has type ‘uint64_t {aka long unsigned int}’ [-Wformat=]
+     ESP_LOGI(TAG, "%s size is %llu, %s size is %llu", file1, size1, file2, size2);
+ ^
+libaudio/idf_components/log/include/esp_log.h:282:59: note: in definition of macro ‘LOG_FORMAT’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                                           ^~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:342:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+audio_test/fatfs_stream_test.c:58:5: note: in expansion of macro ‘ESP_LOGI’
+     ESP_LOGI(TAG, "%s size is %llu, %s size is %llu", file1, size1, file2, size2);
+     ^~~~~~~~
+audio_test/fatfs_stream_test.c:58:1: warning: format ‘%llu’ expects argument of type ‘long long unsigned int’, but argument 7 has type ‘uint64_t {aka long unsigned int}’ [-Wformat=]
+     ESP_LOGI(TAG, "%s size is %llu, %s size is %llu", file1, size1, file2, size2);
+ ^
+libaudio/idf_components/log/include/esp_log.h:282:59: note: in definition of macro ‘LOG_FORMAT’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                                           ^~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:342:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+audio_test/fatfs_stream_test.c:58:5: note: in expansion of macro ‘ESP_LOGI’
+     ESP_LOGI(TAG, "%s size is %llu, %s size is %llu", file1, size1, file2, size2);
+     ^~~~~~~~
+audio_test/fatfs_stream_test.c:58:1: warning: format ‘%llu’ expects argument of type ‘long long unsigned int’, but argument 9 has type ‘uint64_t {aka long unsigned int}’ [-Wformat=]
+     ESP_LOGI(TAG, "%s size is %llu, %s size is %llu", file1, size1, file2, size2);
+ ^
+libaudio/idf_components/log/include/esp_log.h:282:59: note: in definition of macro ‘LOG_FORMAT’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                                           ^~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:342:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+audio_test/fatfs_stream_test.c:58:5: note: in expansion of macro ‘ESP_LOGI’
+     ESP_LOGI(TAG, "%s size is %llu, %s size is %llu", file1, size1, file2, size2);
+     ^~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:265:27: warning: format ‘%llu’ expects argument of type ‘long long unsigned int’, but argument 7 has type ‘uint64_t {aka long unsigned int}’ [-Wformat=]
+ #define LOG_COLOR(COLOR)  "\033[0;" COLOR "m"
+                           ^
+libaudio/idf_components/log/include/esp_log.h:270:27: note: in expansion of macro ‘LOG_COLOR’
+ #define LOG_COLOR_I       LOG_COLOR(LOG_COLOR_GREEN)
+                           ^~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:282:37: note: in expansion of macro ‘LOG_COLOR_I’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                     ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:414:86: note: in expansion of macro ‘LOG_FORMAT’
+         else                                { esp_log_write(ESP_LOG_INFO,       tag, LOG_FORMAT(I, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+                                                                                      ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:342:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+audio_test/fatfs_stream_test.c:58:5: note: in expansion of macro ‘ESP_LOGI’
+     ESP_LOGI(TAG, "%s size is %llu, %s size is %llu", file1, size1, file2, size2);
+     ^~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:265:27: warning: format ‘%llu’ expects argument of type ‘long long unsigned int’, but argument 9 has type ‘uint64_t {aka long unsigned int}’ [-Wformat=]
+ #define LOG_COLOR(COLOR)  "\033[0;" COLOR "m"
+                           ^
+libaudio/idf_components/log/include/esp_log.h:270:27: note: in expansion of macro ‘LOG_COLOR’
+ #define LOG_COLOR_I       LOG_COLOR(LOG_COLOR_GREEN)
+                           ^~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:282:37: note: in expansion of macro ‘LOG_COLOR_I’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                     ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:414:86: note: in expansion of macro ‘LOG_FORMAT’
+         else                                { esp_log_write(ESP_LOG_INFO,       tag, LOG_FORMAT(I, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+                                                                                      ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:342:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+audio_test/fatfs_stream_test.c:58:5: note: in expansion of macro ‘ESP_LOGI’
+     ESP_LOGI(TAG, "%s size is %llu, %s size is %llu", file1, size1, file2, size2);
+     ^~~~~~~~
+audio_test/fatfs_stream_test.c: In function ‘fatfs_read_write_loop’:
+audio_test/fatfs_stream_test.c:136:18: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+             && (((int)msg.data == AEL_STATUS_STATE_STOPPED) || ((int)msg.data == AEL_STATUS_STATE_FINISHED))) {
+                  ^
+audio_test/fatfs_stream_test.c:136:65: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+             && (((int)msg.data == AEL_STATUS_STATE_STOPPED) || ((int)msg.data == AEL_STATUS_STATE_FINISHED))) {
+                                                                 ^
+audio_test/audio_pipeline_test.c: In function ‘_el_process’:
+audio_test/audio_pipeline_test.c:48:5: warning: implicit declaration of function ‘usleep’; did you mean ‘fseek’? [-Wimplicit-function-declaration]
+     usleep(10000);
+     ^~~~~~
+     fseek
+audio_test/audio_pipeline_test.c: In function ‘audio_pipeline_test’:
+audio_test/audio_pipeline_test.c:76:17: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+     el_cfg.read = _el_read;
+                 ^
+audio_test/audio_pipeline_test.c:77:20: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+     el_cfg.process = _el_process;
+                    ^
+audio_test/audio_pipeline_test.c:87:18: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+     el_cfg.write = _el_write;
+                  ^
+In file included from libaudio/components/audio_pipeline/audio_pipeline.c:29:0:
+libaudio/components/audio_pipeline/audio_pipeline.c: In function ‘audio_pipeline_terminate_with_ticks’:
+libaudio/idf_components/log/include/esp_log.h:265:27: warning: format ‘%lu’ expects argument of type ‘long unsigned int’, but argument 6 has type ‘TickType_t {aka unsigned int}’ [-Wformat=]
+ #define LOG_COLOR(COLOR)  "\033[0;" COLOR "m"
+                           ^
+libaudio/idf_components/log/include/esp_log.h:268:27: note: in expansion of macro ‘LOG_COLOR’
+ #define LOG_COLOR_E       LOG_COLOR(LOG_COLOR_RED)
+                           ^~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:282:37: note: in expansion of macro ‘LOG_COLOR_E’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                     ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:410:86: note: in expansion of macro ‘LOG_FORMAT’
+         if (level==ESP_LOG_ERROR )          { esp_log_write(ESP_LOG_ERROR,      tag, LOG_FORMAT(E, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+                                                                                      ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:343:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGD( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_DEBUG,   tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_pipeline/audio_pipeline.c:388:5: note: in expansion of macro ‘ESP_LOGD’
+     ESP_LOGD(TAG, "Destroy audio_pipeline elements with ticks[%lu]", ticks_to_wait);
+     ^~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:265:27: warning: format ‘%lu’ expects argument of type ‘long unsigned int’, but argument 6 has type ‘TickType_t {aka unsigned int}’ [-Wformat=]
+ #define LOG_COLOR(COLOR)  "\033[0;" COLOR "m"
+                           ^
+libaudio/idf_components/log/include/esp_log.h:269:27: note: in expansion of macro ‘LOG_COLOR’
+ #define LOG_COLOR_W       LOG_COLOR(LOG_COLOR_BROWN)
+                           ^~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:282:37: note: in expansion of macro ‘LOG_COLOR_W’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                     ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:411:86: note: in expansion of macro ‘LOG_FORMAT’
+         else if (level==ESP_LOG_WARN )      { esp_log_write(ESP_LOG_WARN,       tag, LOG_FORMAT(W, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+                                                                                      ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:343:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGD( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_DEBUG,   tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_pipeline/audio_pipeline.c:388:5: note: in expansion of macro ‘ESP_LOGD’
+     ESP_LOGD(TAG, "Destroy audio_pipeline elements with ticks[%lu]", ticks_to_wait);
+     ^~~~~~~~
+libaudio/components/audio_pipeline/audio_pipeline.c:388:1: warning: format ‘%lu’ expects argument of type ‘long unsigned int’, but argument 6 has type ‘TickType_t {aka unsigned int}’ [-Wformat=]
+     ESP_LOGD(TAG, "Destroy audio_pipeline elements with ticks[%lu]", ticks_to_wait);
+ ^
+libaudio/idf_components/log/include/esp_log.h:282:59: note: in definition of macro ‘LOG_FORMAT’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                                           ^~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:343:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGD( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_DEBUG,   tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_pipeline/audio_pipeline.c:388:5: note: in expansion of macro ‘ESP_LOGD’
+     ESP_LOGD(TAG, "Destroy audio_pipeline elements with ticks[%lu]", ticks_to_wait);
+     ^~~~~~~~
+libaudio/components/audio_pipeline/audio_pipeline.c:388:1: warning: format ‘%lu’ expects argument of type ‘long unsigned int’, but argument 6 has type ‘TickType_t {aka unsigned int}’ [-Wformat=]
+     ESP_LOGD(TAG, "Destroy audio_pipeline elements with ticks[%lu]", ticks_to_wait);
+ ^
+libaudio/idf_components/log/include/esp_log.h:282:59: note: in definition of macro ‘LOG_FORMAT’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                                           ^~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:343:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGD( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_DEBUG,   tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_pipeline/audio_pipeline.c:388:5: note: in expansion of macro ‘ESP_LOGD’
+     ESP_LOGD(TAG, "Destroy audio_pipeline elements with ticks[%lu]", ticks_to_wait);
+     ^~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:265:27: warning: format ‘%lu’ expects argument of type ‘long unsigned int’, but argument 6 has type ‘TickType_t {aka unsigned int}’ [-Wformat=]
+ #define LOG_COLOR(COLOR)  "\033[0;" COLOR "m"
+                           ^
+libaudio/idf_components/log/include/esp_log.h:270:27: note: in expansion of macro ‘LOG_COLOR’
+ #define LOG_COLOR_I       LOG_COLOR(LOG_COLOR_GREEN)
+                           ^~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:282:37: note: in expansion of macro ‘LOG_COLOR_I’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                     ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:414:86: note: in expansion of macro ‘LOG_FORMAT’
+         else                                { esp_log_write(ESP_LOG_INFO,       tag, LOG_FORMAT(I, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+                                                                                      ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:343:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGD( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_DEBUG,   tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_pipeline/audio_pipeline.c:388:5: note: in expansion of macro ‘ESP_LOGD’
+     ESP_LOGD(TAG, "Destroy audio_pipeline elements with ticks[%lu]", ticks_to_wait);
+     ^~~~~~~~
+libaudio/components/audio_pipeline/audio_pipeline.c: In function ‘audio_pipeline_breakup_elements’:
+libaudio/components/audio_pipeline/audio_pipeline.c:793:18: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+                  (int)el_item->el, audio_element_get_tag(el_item->el),
+                  ^
+libaudio/idf_components/log/include/esp_log.h:410:137: note: in definition of macro ‘ESP_LOG_LEVEL’
+         if (level==ESP_LOG_ERROR )          { esp_log_write(ESP_LOG_ERROR,      tag, LOG_FORMAT(E, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+                                                                                                                                         ^~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:343:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGD( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_DEBUG,   tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_pipeline/audio_pipeline.c:792:9: note: in expansion of macro ‘ESP_LOGD’
+         ESP_LOGD(TAG, "%d, el:%08x, %s, in_rb:%08x, out_rb:%08x, linked:%d, el-kept:%d", __LINE__,
+         ^~~~~~~~
+libaudio/components/audio_pipeline/audio_pipeline.c:794:18: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+                  (int)audio_element_get_input_ringbuf(el_item->el),
+                  ^
+libaudio/idf_components/log/include/esp_log.h:410:137: note: in definition of macro ‘ESP_LOG_LEVEL’
+         if (level==ESP_LOG_ERROR )          { esp_log_write(ESP_LOG_ERROR,      tag, LOG_FORMAT(E, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+                                                                                                                                         ^~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:343:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGD( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_DEBUG,   tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_pipeline/audio_pipeline.c:792:9: note: in expansion of macro ‘ESP_LOGD’
+         ESP_LOGD(TAG, "%d, el:%08x, %s, in_rb:%08x, out_rb:%08x, linked:%d, el-kept:%d", __LINE__,
+         ^~~~~~~~
+libaudio/components/audio_pipeline/audio_pipeline.c:795:18: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+                  (int)audio_element_get_output_ringbuf(el_item->el),
+                  ^
+libaudio/idf_components/log/include/esp_log.h:410:137: note: in definition of macro ‘ESP_LOG_LEVEL’
+         if (level==ESP_LOG_ERROR )          { esp_log_write(ESP_LOG_ERROR,      tag, LOG_FORMAT(E, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+                                                                                                                                         ^~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:343:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGD( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_DEBUG,   tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_pipeline/audio_pipeline.c:792:9: note: in expansion of macro ‘ESP_LOGD’
+         ESP_LOGD(TAG, "%d, el:%08x, %s, in_rb:%08x, out_rb:%08x, linked:%d, el-kept:%d", __LINE__,
+         ^~~~~~~~
+libaudio/components/audio_pipeline/audio_pipeline.c:793:18: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+                  (int)el_item->el, audio_element_get_tag(el_item->el),
+                  ^
+libaudio/idf_components/log/include/esp_log.h:411:137: note: in definition of macro ‘ESP_LOG_LEVEL’
+         else if (level==ESP_LOG_WARN )      { esp_log_write(ESP_LOG_WARN,       tag, LOG_FORMAT(W, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+                                                                                                                                         ^~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:343:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGD( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_DEBUG,   tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_pipeline/audio_pipeline.c:792:9: note: in expansion of macro ‘ESP_LOGD’
+         ESP_LOGD(TAG, "%d, el:%08x, %s, in_rb:%08x, out_rb:%08x, linked:%d, el-kept:%d", __LINE__,
+         ^~~~~~~~
+libaudio/components/audio_pipeline/audio_pipeline.c:794:18: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+                  (int)audio_element_get_input_ringbuf(el_item->el),
+                  ^
+libaudio/idf_components/log/include/esp_log.h:411:137: note: in definition of macro ‘ESP_LOG_LEVEL’
+         else if (level==ESP_LOG_WARN )      { esp_log_write(ESP_LOG_WARN,       tag, LOG_FORMAT(W, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+                                                                                                                                         ^~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:343:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGD( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_DEBUG,   tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_pipeline/audio_pipeline.c:792:9: note: in expansion of macro ‘ESP_LOGD’
+         ESP_LOGD(TAG, "%d, el:%08x, %s, in_rb:%08x, out_rb:%08x, linked:%d, el-kept:%d", __LINE__,
+         ^~~~~~~~
+libaudio/components/audio_pipeline/audio_pipeline.c:795:18: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+                  (int)audio_element_get_output_ringbuf(el_item->el),
+                  ^
+libaudio/idf_components/log/include/esp_log.h:411:137: note: in definition of macro ‘ESP_LOG_LEVEL’
+         else if (level==ESP_LOG_WARN )      { esp_log_write(ESP_LOG_WARN,       tag, LOG_FORMAT(W, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+                                                                                                                                         ^~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:343:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGD( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_DEBUG,   tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_pipeline/audio_pipeline.c:792:9: note: in expansion of macro ‘ESP_LOGD’
+         ESP_LOGD(TAG, "%d, el:%08x, %s, in_rb:%08x, out_rb:%08x, linked:%d, el-kept:%d", __LINE__,
+         ^~~~~~~~
+libaudio/components/audio_pipeline/audio_pipeline.c:793:18: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+                  (int)el_item->el, audio_element_get_tag(el_item->el),
+                  ^
+libaudio/idf_components/log/include/esp_log.h:412:137: note: in definition of macro ‘ESP_LOG_LEVEL’
+         else if (level==ESP_LOG_DEBUG )     { esp_log_write(ESP_LOG_DEBUG,      tag, LOG_FORMAT(D, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+                                                                                                                                         ^~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:343:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGD( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_DEBUG,   tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_pipeline/audio_pipeline.c:792:9: note: in expansion of macro ‘ESP_LOGD’
+         ESP_LOGD(TAG, "%d, el:%08x, %s, in_rb:%08x, out_rb:%08x, linked:%d, el-kept:%d", __LINE__,
+         ^~~~~~~~
+libaudio/components/audio_pipeline/audio_pipeline.c:794:18: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+                  (int)audio_element_get_input_ringbuf(el_item->el),
+                  ^
+libaudio/idf_components/log/include/esp_log.h:412:137: note: in definition of macro ‘ESP_LOG_LEVEL’
+         else if (level==ESP_LOG_DEBUG )     { esp_log_write(ESP_LOG_DEBUG,      tag, LOG_FORMAT(D, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+                                                                                                                                         ^~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:343:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGD( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_DEBUG,   tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_pipeline/audio_pipeline.c:792:9: note: in expansion of macro ‘ESP_LOGD’
+         ESP_LOGD(TAG, "%d, el:%08x, %s, in_rb:%08x, out_rb:%08x, linked:%d, el-kept:%d", __LINE__,
+         ^~~~~~~~
+libaudio/components/audio_pipeline/audio_pipeline.c:795:18: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+                  (int)audio_element_get_output_ringbuf(el_item->el),
+                  ^
+libaudio/idf_components/log/include/esp_log.h:412:137: note: in definition of macro ‘ESP_LOG_LEVEL’
+         else if (level==ESP_LOG_DEBUG )     { esp_log_write(ESP_LOG_DEBUG,      tag, LOG_FORMAT(D, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+                                                                                                                                         ^~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:343:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGD( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_DEBUG,   tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_pipeline/audio_pipeline.c:792:9: note: in expansion of macro ‘ESP_LOGD’
+         ESP_LOGD(TAG, "%d, el:%08x, %s, in_rb:%08x, out_rb:%08x, linked:%d, el-kept:%d", __LINE__,
+         ^~~~~~~~
+libaudio/components/audio_pipeline/audio_pipeline.c:793:18: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+                  (int)el_item->el, audio_element_get_tag(el_item->el),
+                  ^
+libaudio/idf_components/log/include/esp_log.h:413:137: note: in definition of macro ‘ESP_LOG_LEVEL’
+         else if (level==ESP_LOG_VERBOSE )   { esp_log_write(ESP_LOG_VERBOSE,    tag, LOG_FORMAT(V, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+                                                                                                                                         ^~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:343:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGD( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_DEBUG,   tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_pipeline/audio_pipeline.c:792:9: note: in expansion of macro ‘ESP_LOGD’
+         ESP_LOGD(TAG, "%d, el:%08x, %s, in_rb:%08x, out_rb:%08x, linked:%d, el-kept:%d", __LINE__,
+         ^~~~~~~~
+libaudio/components/audio_pipeline/audio_pipeline.c:794:18: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+                  (int)audio_element_get_input_ringbuf(el_item->el),
+                  ^
+libaudio/idf_components/log/include/esp_log.h:413:137: note: in definition of macro ‘ESP_LOG_LEVEL’
+         else if (level==ESP_LOG_VERBOSE )   { esp_log_write(ESP_LOG_VERBOSE,    tag, LOG_FORMAT(V, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+                                                                                                                                         ^~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:343:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGD( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_DEBUG,   tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_pipeline/audio_pipeline.c:792:9: note: in expansion of macro ‘ESP_LOGD’
+         ESP_LOGD(TAG, "%d, el:%08x, %s, in_rb:%08x, out_rb:%08x, linked:%d, el-kept:%d", __LINE__,
+         ^~~~~~~~
+libaudio/components/audio_pipeline/audio_pipeline.c:795:18: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+                  (int)audio_element_get_output_ringbuf(el_item->el),
+                  ^
+libaudio/idf_components/log/include/esp_log.h:413:137: note: in definition of macro ‘ESP_LOG_LEVEL’
+         else if (level==ESP_LOG_VERBOSE )   { esp_log_write(ESP_LOG_VERBOSE,    tag, LOG_FORMAT(V, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+                                                                                                                                         ^~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:343:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGD( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_DEBUG,   tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_pipeline/audio_pipeline.c:792:9: note: in expansion of macro ‘ESP_LOGD’
+         ESP_LOGD(TAG, "%d, el:%08x, %s, in_rb:%08x, out_rb:%08x, linked:%d, el-kept:%d", __LINE__,
+         ^~~~~~~~
+libaudio/components/audio_pipeline/audio_pipeline.c:793:18: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+                  (int)el_item->el, audio_element_get_tag(el_item->el),
+                  ^
+libaudio/idf_components/log/include/esp_log.h:414:137: note: in definition of macro ‘ESP_LOG_LEVEL’
+         else                                { esp_log_write(ESP_LOG_INFO,       tag, LOG_FORMAT(I, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+                                                                                                                                         ^~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:343:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGD( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_DEBUG,   tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_pipeline/audio_pipeline.c:792:9: note: in expansion of macro ‘ESP_LOGD’
+         ESP_LOGD(TAG, "%d, el:%08x, %s, in_rb:%08x, out_rb:%08x, linked:%d, el-kept:%d", __LINE__,
+         ^~~~~~~~
+libaudio/components/audio_pipeline/audio_pipeline.c:794:18: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+                  (int)audio_element_get_input_ringbuf(el_item->el),
+                  ^
+libaudio/idf_components/log/include/esp_log.h:414:137: note: in definition of macro ‘ESP_LOG_LEVEL’
+         else                                { esp_log_write(ESP_LOG_INFO,       tag, LOG_FORMAT(I, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+                                                                                                                                         ^~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:343:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGD( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_DEBUG,   tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_pipeline/audio_pipeline.c:792:9: note: in expansion of macro ‘ESP_LOGD’
+         ESP_LOGD(TAG, "%d, el:%08x, %s, in_rb:%08x, out_rb:%08x, linked:%d, el-kept:%d", __LINE__,
+         ^~~~~~~~
+libaudio/components/audio_pipeline/audio_pipeline.c:795:18: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+                  (int)audio_element_get_output_ringbuf(el_item->el),
+                  ^
+libaudio/idf_components/log/include/esp_log.h:414:137: note: in definition of macro ‘ESP_LOG_LEVEL’
+         else                                { esp_log_write(ESP_LOG_INFO,       tag, LOG_FORMAT(I, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+                                                                                                                                         ^~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:343:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGD( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_DEBUG,   tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_pipeline/audio_pipeline.c:792:9: note: in expansion of macro ‘ESP_LOGD’
+         ESP_LOGD(TAG, "%d, el:%08x, %s, in_rb:%08x, out_rb:%08x, linked:%d, el-kept:%d", __LINE__,
+         ^~~~~~~~
+In file included from libaudio/components/audio_pipeline/audio_element.c:30:0:
+libaudio/components/audio_pipeline/audio_element.c: In function ‘__audio_element_term’:
+libaudio/idf_components/log/include/esp_log.h:265:27: warning: format ‘%lu’ expects argument of type ‘long unsigned int’, but argument 8 has type ‘TickType_t {aka unsigned int}’ [-Wformat=]
+ #define LOG_COLOR(COLOR)  "\033[0;" COLOR "m"
+                           ^
+libaudio/idf_components/log/include/esp_log.h:268:27: note: in expansion of macro ‘LOG_COLOR’
+ #define LOG_COLOR_E       LOG_COLOR(LOG_COLOR_RED)
+                           ^~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:282:37: note: in expansion of macro ‘LOG_COLOR_E’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                     ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:410:86: note: in expansion of macro ‘LOG_FORMAT’
+         if (level==ESP_LOG_ERROR )          { esp_log_write(ESP_LOG_ERROR,      tag, LOG_FORMAT(E, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+                                                                                      ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:341:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGW( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_WARN,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_pipeline/audio_element.c:1129:9: note: in expansion of macro ‘ESP_LOGW’
+         ESP_LOGW(TAG, "[%s-%p] Element task destroy timeout[%lu]", el->tag, el, ticks_to_wait);
+         ^~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:265:27: warning: format ‘%lu’ expects argument of type ‘long unsigned int’, but argument 8 has type ‘TickType_t {aka unsigned int}’ [-Wformat=]
+ #define LOG_COLOR(COLOR)  "\033[0;" COLOR "m"
+                           ^
+libaudio/idf_components/log/include/esp_log.h:269:27: note: in expansion of macro ‘LOG_COLOR’
+ #define LOG_COLOR_W       LOG_COLOR(LOG_COLOR_BROWN)
+                           ^~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:282:37: note: in expansion of macro ‘LOG_COLOR_W’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                     ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:411:86: note: in expansion of macro ‘LOG_FORMAT’
+         else if (level==ESP_LOG_WARN )      { esp_log_write(ESP_LOG_WARN,       tag, LOG_FORMAT(W, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+                                                                                      ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:341:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGW( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_WARN,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_pipeline/audio_element.c:1129:9: note: in expansion of macro ‘ESP_LOGW’
+         ESP_LOGW(TAG, "[%s-%p] Element task destroy timeout[%lu]", el->tag, el, ticks_to_wait);
+         ^~~~~~~~
+libaudio/components/audio_pipeline/audio_element.c:1129:1: warning: format ‘%lu’ expects argument of type ‘long unsigned int’, but argument 8 has type ‘TickType_t {aka unsigned int}’ [-Wformat=]
+         ESP_LOGW(TAG, "[%s-%p] Element task destroy timeout[%lu]", el->tag, el, ticks_to_wait);
+ ^
+libaudio/idf_components/log/include/esp_log.h:282:59: note: in definition of macro ‘LOG_FORMAT’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                                           ^~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:341:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGW( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_WARN,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_pipeline/audio_element.c:1129:9: note: in expansion of macro ‘ESP_LOGW’
+         ESP_LOGW(TAG, "[%s-%p] Element task destroy timeout[%lu]", el->tag, el, ticks_to_wait);
+         ^~~~~~~~
+libaudio/components/audio_pipeline/audio_element.c:1129:1: warning: format ‘%lu’ expects argument of type ‘long unsigned int’, but argument 8 has type ‘TickType_t {aka unsigned int}’ [-Wformat=]
+         ESP_LOGW(TAG, "[%s-%p] Element task destroy timeout[%lu]", el->tag, el, ticks_to_wait);
+ ^
+libaudio/idf_components/log/include/esp_log.h:282:59: note: in definition of macro ‘LOG_FORMAT’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                                           ^~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:341:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGW( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_WARN,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_pipeline/audio_element.c:1129:9: note: in expansion of macro ‘ESP_LOGW’
+         ESP_LOGW(TAG, "[%s-%p] Element task destroy timeout[%lu]", el->tag, el, ticks_to_wait);
+         ^~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:265:27: warning: format ‘%lu’ expects argument of type ‘long unsigned int’, but argument 8 has type ‘TickType_t {aka unsigned int}’ [-Wformat=]
+ #define LOG_COLOR(COLOR)  "\033[0;" COLOR "m"
+                           ^
+libaudio/idf_components/log/include/esp_log.h:270:27: note: in expansion of macro ‘LOG_COLOR’
+ #define LOG_COLOR_I       LOG_COLOR(LOG_COLOR_GREEN)
+                           ^~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:282:37: note: in expansion of macro ‘LOG_COLOR_I’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                     ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:414:86: note: in expansion of macro ‘LOG_FORMAT’
+         else                                { esp_log_write(ESP_LOG_INFO,       tag, LOG_FORMAT(I, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+                                                                                      ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:341:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGW( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_WARN,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_pipeline/audio_element.c:1129:9: note: in expansion of macro ‘ESP_LOGW’
+         ESP_LOGW(TAG, "[%s-%p] Element task destroy timeout[%lu]", el->tag, el, ticks_to_wait);
+         ^~~~~~~~
+libaudio/components/audio_pipeline/audio_element.c: In function ‘audio_element_terminate_with_ticks’:
+libaudio/idf_components/log/include/esp_log.h:265:27: warning: format ‘%lu’ expects argument of type ‘long unsigned int’, but argument 7 has type ‘TickType_t {aka unsigned int}’ [-Wformat=]
+ #define LOG_COLOR(COLOR)  "\033[0;" COLOR "m"
+                           ^
+libaudio/idf_components/log/include/esp_log.h:268:27: note: in expansion of macro ‘LOG_COLOR’
+ #define LOG_COLOR_E       LOG_COLOR(LOG_COLOR_RED)
+                           ^~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:282:37: note: in expansion of macro ‘LOG_COLOR_E’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                     ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:410:86: note: in expansion of macro ‘LOG_FORMAT’
+         if (level==ESP_LOG_ERROR )          { esp_log_write(ESP_LOG_ERROR,      tag, LOG_FORMAT(E, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+                                                                                      ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:341:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGW( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_WARN,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_pipeline/audio_element.c:1151:9: note: in expansion of macro ‘ESP_LOGW’
+         ESP_LOGW(TAG, "[%s] Element has not create when AUDIO_ELEMENT_TERMINATE, tick:%lu", el->tag, ticks_to_wait);
+         ^~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:265:27: warning: format ‘%lu’ expects argument of type ‘long unsigned int’, but argument 7 has type ‘TickType_t {aka unsigned int}’ [-Wformat=]
+ #define LOG_COLOR(COLOR)  "\033[0;" COLOR "m"
+                           ^
+libaudio/idf_components/log/include/esp_log.h:269:27: note: in expansion of macro ‘LOG_COLOR’
+ #define LOG_COLOR_W       LOG_COLOR(LOG_COLOR_BROWN)
+                           ^~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:282:37: note: in expansion of macro ‘LOG_COLOR_W’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                     ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:411:86: note: in expansion of macro ‘LOG_FORMAT’
+         else if (level==ESP_LOG_WARN )      { esp_log_write(ESP_LOG_WARN,       tag, LOG_FORMAT(W, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+                                                                                      ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:341:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGW( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_WARN,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_pipeline/audio_element.c:1151:9: note: in expansion of macro ‘ESP_LOGW’
+         ESP_LOGW(TAG, "[%s] Element has not create when AUDIO_ELEMENT_TERMINATE, tick:%lu", el->tag, ticks_to_wait);
+         ^~~~~~~~
+libaudio/components/audio_pipeline/audio_element.c:1151:1: warning: format ‘%lu’ expects argument of type ‘long unsigned int’, but argument 7 has type ‘TickType_t {aka unsigned int}’ [-Wformat=]
+         ESP_LOGW(TAG, "[%s] Element has not create when AUDIO_ELEMENT_TERMINATE, tick:%lu", el->tag, ticks_to_wait);
+ ^
+libaudio/idf_components/log/include/esp_log.h:282:59: note: in definition of macro ‘LOG_FORMAT’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                                           ^~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:341:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGW( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_WARN,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_pipeline/audio_element.c:1151:9: note: in expansion of macro ‘ESP_LOGW’
+         ESP_LOGW(TAG, "[%s] Element has not create when AUDIO_ELEMENT_TERMINATE, tick:%lu", el->tag, ticks_to_wait);
+         ^~~~~~~~
+libaudio/components/audio_pipeline/audio_element.c:1151:1: warning: format ‘%lu’ expects argument of type ‘long unsigned int’, but argument 7 has type ‘TickType_t {aka unsigned int}’ [-Wformat=]
+         ESP_LOGW(TAG, "[%s] Element has not create when AUDIO_ELEMENT_TERMINATE, tick:%lu", el->tag, ticks_to_wait);
+ ^
+libaudio/idf_components/log/include/esp_log.h:282:59: note: in definition of macro ‘LOG_FORMAT’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                                           ^~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:341:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGW( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_WARN,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_pipeline/audio_element.c:1151:9: note: in expansion of macro ‘ESP_LOGW’
+         ESP_LOGW(TAG, "[%s] Element has not create when AUDIO_ELEMENT_TERMINATE, tick:%lu", el->tag, ticks_to_wait);
+         ^~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:265:27: warning: format ‘%lu’ expects argument of type ‘long unsigned int’, but argument 7 has type ‘TickType_t {aka unsigned int}’ [-Wformat=]
+ #define LOG_COLOR(COLOR)  "\033[0;" COLOR "m"
+                           ^
+libaudio/idf_components/log/include/esp_log.h:270:27: note: in expansion of macro ‘LOG_COLOR’
+ #define LOG_COLOR_I       LOG_COLOR(LOG_COLOR_GREEN)
+                           ^~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:282:37: note: in expansion of macro ‘LOG_COLOR_I’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                     ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:414:86: note: in expansion of macro ‘LOG_FORMAT’
+         else                                { esp_log_write(ESP_LOG_INFO,       tag, LOG_FORMAT(I, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+                                                                                      ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:341:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGW( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_WARN,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_pipeline/audio_element.c:1151:9: note: in expansion of macro ‘ESP_LOGW’
+         ESP_LOGW(TAG, "[%s] Element has not create when AUDIO_ELEMENT_TERMINATE, tick:%lu", el->tag, ticks_to_wait);
+         ^~~~~~~~
+In file included from libaudio/components/audio_sal/audio_mem.c:28:0:
+libaudio/components/audio_sal/audio_mem.c: In function ‘audio_malloc’:
+libaudio/idf_components/log/include/esp_log.h:265:27: warning: format ‘%d’ expects argument of type ‘int’, but argument 7 has type ‘size_t {aka long unsigned int}’ [-Wformat=]
+ #define LOG_COLOR(COLOR)  "\033[0;" COLOR "m"
+                           ^
+libaudio/idf_components/log/include/esp_log.h:268:27: note: in expansion of macro ‘LOG_COLOR’
+ #define LOG_COLOR_E       LOG_COLOR(LOG_COLOR_RED)
+                           ^~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:282:37: note: in expansion of macro ‘LOG_COLOR_E’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                     ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:410:86: note: in expansion of macro ‘LOG_FORMAT’
+         if (level==ESP_LOG_ERROR )          { esp_log_write(ESP_LOG_ERROR,      tag, LOG_FORMAT(E, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+                                                                                      ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:342:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:40:5: note: in expansion of macro ‘ESP_LOGI’
+     ESP_LOGI("AUDIO_MEM", "malloc:%p, size:%d, called:0x%08x", data, size, (intptr_t)__builtin_return_address(0) - 2);
+     ^~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:265:27: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 8 has type ‘long int’ [-Wformat=]
+ #define LOG_COLOR(COLOR)  "\033[0;" COLOR "m"
+                           ^
+libaudio/idf_components/log/include/esp_log.h:268:27: note: in expansion of macro ‘LOG_COLOR’
+ #define LOG_COLOR_E       LOG_COLOR(LOG_COLOR_RED)
+                           ^~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:282:37: note: in expansion of macro ‘LOG_COLOR_E’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                     ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:410:86: note: in expansion of macro ‘LOG_FORMAT’
+         if (level==ESP_LOG_ERROR )          { esp_log_write(ESP_LOG_ERROR,      tag, LOG_FORMAT(E, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+                                                                                      ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:342:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:40:5: note: in expansion of macro ‘ESP_LOGI’
+     ESP_LOGI("AUDIO_MEM", "malloc:%p, size:%d, called:0x%08x", data, size, (intptr_t)__builtin_return_address(0) - 2);
+     ^~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:265:27: warning: format ‘%d’ expects argument of type ‘int’, but argument 7 has type ‘size_t {aka long unsigned int}’ [-Wformat=]
+ #define LOG_COLOR(COLOR)  "\033[0;" COLOR "m"
+                           ^
+libaudio/idf_components/log/include/esp_log.h:269:27: note: in expansion of macro ‘LOG_COLOR’
+ #define LOG_COLOR_W       LOG_COLOR(LOG_COLOR_BROWN)
+                           ^~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:282:37: note: in expansion of macro ‘LOG_COLOR_W’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                     ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:411:86: note: in expansion of macro ‘LOG_FORMAT’
+         else if (level==ESP_LOG_WARN )      { esp_log_write(ESP_LOG_WARN,       tag, LOG_FORMAT(W, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+                                                                                      ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:342:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:40:5: note: in expansion of macro ‘ESP_LOGI’
+     ESP_LOGI("AUDIO_MEM", "malloc:%p, size:%d, called:0x%08x", data, size, (intptr_t)__builtin_return_address(0) - 2);
+     ^~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:265:27: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 8 has type ‘long int’ [-Wformat=]
+ #define LOG_COLOR(COLOR)  "\033[0;" COLOR "m"
+                           ^
+libaudio/idf_components/log/include/esp_log.h:269:27: note: in expansion of macro ‘LOG_COLOR’
+ #define LOG_COLOR_W       LOG_COLOR(LOG_COLOR_BROWN)
+                           ^~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:282:37: note: in expansion of macro ‘LOG_COLOR_W’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                     ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:411:86: note: in expansion of macro ‘LOG_FORMAT’
+         else if (level==ESP_LOG_WARN )      { esp_log_write(ESP_LOG_WARN,       tag, LOG_FORMAT(W, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+                                                                                      ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:342:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:40:5: note: in expansion of macro ‘ESP_LOGI’
+     ESP_LOGI("AUDIO_MEM", "malloc:%p, size:%d, called:0x%08x", data, size, (intptr_t)__builtin_return_address(0) - 2);
+     ^~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:40:1: warning: format ‘%d’ expects argument of type ‘int’, but argument 7 has type ‘size_t {aka long unsigned int}’ [-Wformat=]
+     ESP_LOGI("AUDIO_MEM", "malloc:%p, size:%d, called:0x%08x", data, size, (intptr_t)__builtin_return_address(0) - 2);
+ ^
+libaudio/idf_components/log/include/esp_log.h:282:59: note: in definition of macro ‘LOG_FORMAT’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                                           ^~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:342:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:40:5: note: in expansion of macro ‘ESP_LOGI’
+     ESP_LOGI("AUDIO_MEM", "malloc:%p, size:%d, called:0x%08x", data, size, (intptr_t)__builtin_return_address(0) - 2);
+     ^~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:40:1: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 8 has type ‘long int’ [-Wformat=]
+     ESP_LOGI("AUDIO_MEM", "malloc:%p, size:%d, called:0x%08x", data, size, (intptr_t)__builtin_return_address(0) - 2);
+ ^
+libaudio/idf_components/log/include/esp_log.h:282:59: note: in definition of macro ‘LOG_FORMAT’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                                           ^~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:342:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:40:5: note: in expansion of macro ‘ESP_LOGI’
+     ESP_LOGI("AUDIO_MEM", "malloc:%p, size:%d, called:0x%08x", data, size, (intptr_t)__builtin_return_address(0) - 2);
+     ^~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:40:1: warning: format ‘%d’ expects argument of type ‘int’, but argument 7 has type ‘size_t {aka long unsigned int}’ [-Wformat=]
+     ESP_LOGI("AUDIO_MEM", "malloc:%p, size:%d, called:0x%08x", data, size, (intptr_t)__builtin_return_address(0) - 2);
+ ^
+libaudio/idf_components/log/include/esp_log.h:282:59: note: in definition of macro ‘LOG_FORMAT’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                                           ^~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:342:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:40:5: note: in expansion of macro ‘ESP_LOGI’
+     ESP_LOGI("AUDIO_MEM", "malloc:%p, size:%d, called:0x%08x", data, size, (intptr_t)__builtin_return_address(0) - 2);
+     ^~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:40:1: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 8 has type ‘long int’ [-Wformat=]
+     ESP_LOGI("AUDIO_MEM", "malloc:%p, size:%d, called:0x%08x", data, size, (intptr_t)__builtin_return_address(0) - 2);
+ ^
+libaudio/idf_components/log/include/esp_log.h:282:59: note: in definition of macro ‘LOG_FORMAT’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                                           ^~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:342:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:40:5: note: in expansion of macro ‘ESP_LOGI’
+     ESP_LOGI("AUDIO_MEM", "malloc:%p, size:%d, called:0x%08x", data, size, (intptr_t)__builtin_return_address(0) - 2);
+     ^~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:265:27: warning: format ‘%d’ expects argument of type ‘int’, but argument 7 has type ‘size_t {aka long unsigned int}’ [-Wformat=]
+ #define LOG_COLOR(COLOR)  "\033[0;" COLOR "m"
+                           ^
+libaudio/idf_components/log/include/esp_log.h:270:27: note: in expansion of macro ‘LOG_COLOR’
+ #define LOG_COLOR_I       LOG_COLOR(LOG_COLOR_GREEN)
+                           ^~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:282:37: note: in expansion of macro ‘LOG_COLOR_I’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                     ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:414:86: note: in expansion of macro ‘LOG_FORMAT’
+         else                                { esp_log_write(ESP_LOG_INFO,       tag, LOG_FORMAT(I, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+                                                                                      ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:342:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:40:5: note: in expansion of macro ‘ESP_LOGI’
+     ESP_LOGI("AUDIO_MEM", "malloc:%p, size:%d, called:0x%08x", data, size, (intptr_t)__builtin_return_address(0) - 2);
+     ^~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:265:27: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 8 has type ‘long int’ [-Wformat=]
+ #define LOG_COLOR(COLOR)  "\033[0;" COLOR "m"
+                           ^
+libaudio/idf_components/log/include/esp_log.h:270:27: note: in expansion of macro ‘LOG_COLOR’
+ #define LOG_COLOR_I       LOG_COLOR(LOG_COLOR_GREEN)
+                           ^~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:282:37: note: in expansion of macro ‘LOG_COLOR_I’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                     ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:414:86: note: in expansion of macro ‘LOG_FORMAT’
+         else                                { esp_log_write(ESP_LOG_INFO,       tag, LOG_FORMAT(I, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+                                                                                      ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:342:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:40:5: note: in expansion of macro ‘ESP_LOGI’
+     ESP_LOGI("AUDIO_MEM", "malloc:%p, size:%d, called:0x%08x", data, size, (intptr_t)__builtin_return_address(0) - 2);
+     ^~~~~~~~
+libaudio/components/audio_sal/audio_mem.c: In function ‘audio_free’:
+libaudio/idf_components/log/include/esp_log.h:265:27: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 7 has type ‘long int’ [-Wformat=]
+ #define LOG_COLOR(COLOR)  "\033[0;" COLOR "m"
+                           ^
+libaudio/idf_components/log/include/esp_log.h:268:27: note: in expansion of macro ‘LOG_COLOR’
+ #define LOG_COLOR_E       LOG_COLOR(LOG_COLOR_RED)
+                           ^~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:282:37: note: in expansion of macro ‘LOG_COLOR_E’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                     ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:410:86: note: in expansion of macro ‘LOG_FORMAT’
+         if (level==ESP_LOG_ERROR )          { esp_log_write(ESP_LOG_ERROR,      tag, LOG_FORMAT(E, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+                                                                                      ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:342:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:49:5: note: in expansion of macro ‘ESP_LOGI’
+     ESP_LOGI("AUIDO_MEM", "free:%p, called:0x%08x", ptr, (intptr_t)__builtin_return_address(0) - 2);
+     ^~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:265:27: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 7 has type ‘long int’ [-Wformat=]
+ #define LOG_COLOR(COLOR)  "\033[0;" COLOR "m"
+                           ^
+libaudio/idf_components/log/include/esp_log.h:269:27: note: in expansion of macro ‘LOG_COLOR’
+ #define LOG_COLOR_W       LOG_COLOR(LOG_COLOR_BROWN)
+                           ^~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:282:37: note: in expansion of macro ‘LOG_COLOR_W’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                     ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:411:86: note: in expansion of macro ‘LOG_FORMAT’
+         else if (level==ESP_LOG_WARN )      { esp_log_write(ESP_LOG_WARN,       tag, LOG_FORMAT(W, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+                                                                                      ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:342:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:49:5: note: in expansion of macro ‘ESP_LOGI’
+     ESP_LOGI("AUIDO_MEM", "free:%p, called:0x%08x", ptr, (intptr_t)__builtin_return_address(0) - 2);
+     ^~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:49:1: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 7 has type ‘long int’ [-Wformat=]
+     ESP_LOGI("AUIDO_MEM", "free:%p, called:0x%08x", ptr, (intptr_t)__builtin_return_address(0) - 2);
+ ^
+libaudio/idf_components/log/include/esp_log.h:282:59: note: in definition of macro ‘LOG_FORMAT’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                                           ^~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:342:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:49:5: note: in expansion of macro ‘ESP_LOGI’
+     ESP_LOGI("AUIDO_MEM", "free:%p, called:0x%08x", ptr, (intptr_t)__builtin_return_address(0) - 2);
+     ^~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:49:1: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 7 has type ‘long int’ [-Wformat=]
+     ESP_LOGI("AUIDO_MEM", "free:%p, called:0x%08x", ptr, (intptr_t)__builtin_return_address(0) - 2);
+ ^
+libaudio/idf_components/log/include/esp_log.h:282:59: note: in definition of macro ‘LOG_FORMAT’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                                           ^~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:342:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:49:5: note: in expansion of macro ‘ESP_LOGI’
+     ESP_LOGI("AUIDO_MEM", "free:%p, called:0x%08x", ptr, (intptr_t)__builtin_return_address(0) - 2);
+     ^~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:265:27: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 7 has type ‘long int’ [-Wformat=]
+ #define LOG_COLOR(COLOR)  "\033[0;" COLOR "m"
+                           ^
+libaudio/idf_components/log/include/esp_log.h:270:27: note: in expansion of macro ‘LOG_COLOR’
+ #define LOG_COLOR_I       LOG_COLOR(LOG_COLOR_GREEN)
+                           ^~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:282:37: note: in expansion of macro ‘LOG_COLOR_I’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                     ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:414:86: note: in expansion of macro ‘LOG_FORMAT’
+         else                                { esp_log_write(ESP_LOG_INFO,       tag, LOG_FORMAT(I, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+                                                                                      ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:342:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:49:5: note: in expansion of macro ‘ESP_LOGI’
+     ESP_LOGI("AUIDO_MEM", "free:%p, called:0x%08x", ptr, (intptr_t)__builtin_return_address(0) - 2);
+     ^~~~~~~~
+libaudio/components/audio_sal/audio_mem.c: In function ‘audio_calloc’:
+libaudio/idf_components/log/include/esp_log.h:265:27: warning: format ‘%d’ expects argument of type ‘int’, but argument 7 has type ‘size_t {aka long unsigned int}’ [-Wformat=]
+ #define LOG_COLOR(COLOR)  "\033[0;" COLOR "m"
+                           ^
+libaudio/idf_components/log/include/esp_log.h:268:27: note: in expansion of macro ‘LOG_COLOR’
+ #define LOG_COLOR_E       LOG_COLOR(LOG_COLOR_RED)
+                           ^~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:282:37: note: in expansion of macro ‘LOG_COLOR_E’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                     ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:410:86: note: in expansion of macro ‘LOG_FORMAT’
+         if (level==ESP_LOG_ERROR )          { esp_log_write(ESP_LOG_ERROR,      tag, LOG_FORMAT(E, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+                                                                                      ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:342:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:58:5: note: in expansion of macro ‘ESP_LOGI’
+     ESP_LOGI("AUIDO_MEM", "calloc:%p, size:%d, called:0x%08x", data, size, (intptr_t)__builtin_return_address(0) - 2);
+     ^~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:265:27: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 8 has type ‘long int’ [-Wformat=]
+ #define LOG_COLOR(COLOR)  "\033[0;" COLOR "m"
+                           ^
+libaudio/idf_components/log/include/esp_log.h:268:27: note: in expansion of macro ‘LOG_COLOR’
+ #define LOG_COLOR_E       LOG_COLOR(LOG_COLOR_RED)
+                           ^~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:282:37: note: in expansion of macro ‘LOG_COLOR_E’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                     ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:410:86: note: in expansion of macro ‘LOG_FORMAT’
+         if (level==ESP_LOG_ERROR )          { esp_log_write(ESP_LOG_ERROR,      tag, LOG_FORMAT(E, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+                                                                                      ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:342:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:58:5: note: in expansion of macro ‘ESP_LOGI’
+     ESP_LOGI("AUIDO_MEM", "calloc:%p, size:%d, called:0x%08x", data, size, (intptr_t)__builtin_return_address(0) - 2);
+     ^~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:265:27: warning: format ‘%d’ expects argument of type ‘int’, but argument 7 has type ‘size_t {aka long unsigned int}’ [-Wformat=]
+ #define LOG_COLOR(COLOR)  "\033[0;" COLOR "m"
+                           ^
+libaudio/idf_components/log/include/esp_log.h:269:27: note: in expansion of macro ‘LOG_COLOR’
+ #define LOG_COLOR_W       LOG_COLOR(LOG_COLOR_BROWN)
+                           ^~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:282:37: note: in expansion of macro ‘LOG_COLOR_W’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                     ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:411:86: note: in expansion of macro ‘LOG_FORMAT’
+         else if (level==ESP_LOG_WARN )      { esp_log_write(ESP_LOG_WARN,       tag, LOG_FORMAT(W, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+                                                                                      ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:342:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:58:5: note: in expansion of macro ‘ESP_LOGI’
+     ESP_LOGI("AUIDO_MEM", "calloc:%p, size:%d, called:0x%08x", data, size, (intptr_t)__builtin_return_address(0) - 2);
+     ^~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:265:27: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 8 has type ‘long int’ [-Wformat=]
+ #define LOG_COLOR(COLOR)  "\033[0;" COLOR "m"
+                           ^
+libaudio/idf_components/log/include/esp_log.h:269:27: note: in expansion of macro ‘LOG_COLOR’
+ #define LOG_COLOR_W       LOG_COLOR(LOG_COLOR_BROWN)
+                           ^~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:282:37: note: in expansion of macro ‘LOG_COLOR_W’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                     ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:411:86: note: in expansion of macro ‘LOG_FORMAT’
+         else if (level==ESP_LOG_WARN )      { esp_log_write(ESP_LOG_WARN,       tag, LOG_FORMAT(W, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+                                                                                      ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:342:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:58:5: note: in expansion of macro ‘ESP_LOGI’
+     ESP_LOGI("AUIDO_MEM", "calloc:%p, size:%d, called:0x%08x", data, size, (intptr_t)__builtin_return_address(0) - 2);
+     ^~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:58:1: warning: format ‘%d’ expects argument of type ‘int’, but argument 7 has type ‘size_t {aka long unsigned int}’ [-Wformat=]
+     ESP_LOGI("AUIDO_MEM", "calloc:%p, size:%d, called:0x%08x", data, size, (intptr_t)__builtin_return_address(0) - 2);
+ ^
+libaudio/idf_components/log/include/esp_log.h:282:59: note: in definition of macro ‘LOG_FORMAT’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                                           ^~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:342:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:58:5: note: in expansion of macro ‘ESP_LOGI’
+     ESP_LOGI("AUIDO_MEM", "calloc:%p, size:%d, called:0x%08x", data, size, (intptr_t)__builtin_return_address(0) - 2);
+     ^~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:58:1: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 8 has type ‘long int’ [-Wformat=]
+     ESP_LOGI("AUIDO_MEM", "calloc:%p, size:%d, called:0x%08x", data, size, (intptr_t)__builtin_return_address(0) - 2);
+ ^
+libaudio/idf_components/log/include/esp_log.h:282:59: note: in definition of macro ‘LOG_FORMAT’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                                           ^~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:342:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:58:5: note: in expansion of macro ‘ESP_LOGI’
+     ESP_LOGI("AUIDO_MEM", "calloc:%p, size:%d, called:0x%08x", data, size, (intptr_t)__builtin_return_address(0) - 2);
+     ^~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:58:1: warning: format ‘%d’ expects argument of type ‘int’, but argument 7 has type ‘size_t {aka long unsigned int}’ [-Wformat=]
+     ESP_LOGI("AUIDO_MEM", "calloc:%p, size:%d, called:0x%08x", data, size, (intptr_t)__builtin_return_address(0) - 2);
+ ^
+libaudio/idf_components/log/include/esp_log.h:282:59: note: in definition of macro ‘LOG_FORMAT’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                                           ^~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:342:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:58:5: note: in expansion of macro ‘ESP_LOGI’
+     ESP_LOGI("AUIDO_MEM", "calloc:%p, size:%d, called:0x%08x", data, size, (intptr_t)__builtin_return_address(0) - 2);
+     ^~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:58:1: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 8 has type ‘long int’ [-Wformat=]
+     ESP_LOGI("AUIDO_MEM", "calloc:%p, size:%d, called:0x%08x", data, size, (intptr_t)__builtin_return_address(0) - 2);
+ ^
+libaudio/idf_components/log/include/esp_log.h:282:59: note: in definition of macro ‘LOG_FORMAT’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                                           ^~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:342:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:58:5: note: in expansion of macro ‘ESP_LOGI’
+     ESP_LOGI("AUIDO_MEM", "calloc:%p, size:%d, called:0x%08x", data, size, (intptr_t)__builtin_return_address(0) - 2);
+     ^~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:265:27: warning: format ‘%d’ expects argument of type ‘int’, but argument 7 has type ‘size_t {aka long unsigned int}’ [-Wformat=]
+ #define LOG_COLOR(COLOR)  "\033[0;" COLOR "m"
+                           ^
+libaudio/idf_components/log/include/esp_log.h:270:27: note: in expansion of macro ‘LOG_COLOR’
+ #define LOG_COLOR_I       LOG_COLOR(LOG_COLOR_GREEN)
+                           ^~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:282:37: note: in expansion of macro ‘LOG_COLOR_I’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                     ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:414:86: note: in expansion of macro ‘LOG_FORMAT’
+         else                                { esp_log_write(ESP_LOG_INFO,       tag, LOG_FORMAT(I, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+                                                                                      ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:342:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:58:5: note: in expansion of macro ‘ESP_LOGI’
+     ESP_LOGI("AUIDO_MEM", "calloc:%p, size:%d, called:0x%08x", data, size, (intptr_t)__builtin_return_address(0) - 2);
+     ^~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:265:27: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 8 has type ‘long int’ [-Wformat=]
+ #define LOG_COLOR(COLOR)  "\033[0;" COLOR "m"
+                           ^
+libaudio/idf_components/log/include/esp_log.h:270:27: note: in expansion of macro ‘LOG_COLOR’
+ #define LOG_COLOR_I       LOG_COLOR(LOG_COLOR_GREEN)
+                           ^~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:282:37: note: in expansion of macro ‘LOG_COLOR_I’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                     ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:414:86: note: in expansion of macro ‘LOG_FORMAT’
+         else                                { esp_log_write(ESP_LOG_INFO,       tag, LOG_FORMAT(I, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+                                                                                      ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:342:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:58:5: note: in expansion of macro ‘ESP_LOGI’
+     ESP_LOGI("AUIDO_MEM", "calloc:%p, size:%d, called:0x%08x", data, size, (intptr_t)__builtin_return_address(0) - 2);
+     ^~~~~~~~
+libaudio/components/audio_sal/audio_mem.c: In function ‘audio_realloc’:
+libaudio/idf_components/log/include/esp_log.h:265:27: warning: format ‘%d’ expects argument of type ‘int’, but argument 8 has type ‘size_t {aka long unsigned int}’ [-Wformat=]
+ #define LOG_COLOR(COLOR)  "\033[0;" COLOR "m"
+                           ^
+libaudio/idf_components/log/include/esp_log.h:268:27: note: in expansion of macro ‘LOG_COLOR’
+ #define LOG_COLOR_E       LOG_COLOR(LOG_COLOR_RED)
+                           ^~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:282:37: note: in expansion of macro ‘LOG_COLOR_E’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                     ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:410:86: note: in expansion of macro ‘LOG_FORMAT’
+         if (level==ESP_LOG_ERROR )          { esp_log_write(ESP_LOG_ERROR,      tag, LOG_FORMAT(E, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+                                                                                      ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:342:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:68:5: note: in expansion of macro ‘ESP_LOGI’
+     ESP_LOGI("AUDIO_MEM", "realloc,new:%p, ptr:%p size:%d, called:0x%08x", p, ptr, size, (intptr_t)__builtin_return_address(0) - 2);
+     ^~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:265:27: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 9 has type ‘long int’ [-Wformat=]
+ #define LOG_COLOR(COLOR)  "\033[0;" COLOR "m"
+                           ^
+libaudio/idf_components/log/include/esp_log.h:268:27: note: in expansion of macro ‘LOG_COLOR’
+ #define LOG_COLOR_E       LOG_COLOR(LOG_COLOR_RED)
+                           ^~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:282:37: note: in expansion of macro ‘LOG_COLOR_E’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                     ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:410:86: note: in expansion of macro ‘LOG_FORMAT’
+         if (level==ESP_LOG_ERROR )          { esp_log_write(ESP_LOG_ERROR,      tag, LOG_FORMAT(E, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+                                                                                      ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:342:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:68:5: note: in expansion of macro ‘ESP_LOGI’
+     ESP_LOGI("AUDIO_MEM", "realloc,new:%p, ptr:%p size:%d, called:0x%08x", p, ptr, size, (intptr_t)__builtin_return_address(0) - 2);
+     ^~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:265:27: warning: format ‘%d’ expects argument of type ‘int’, but argument 8 has type ‘size_t {aka long unsigned int}’ [-Wformat=]
+ #define LOG_COLOR(COLOR)  "\033[0;" COLOR "m"
+                           ^
+libaudio/idf_components/log/include/esp_log.h:269:27: note: in expansion of macro ‘LOG_COLOR’
+ #define LOG_COLOR_W       LOG_COLOR(LOG_COLOR_BROWN)
+                           ^~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:282:37: note: in expansion of macro ‘LOG_COLOR_W’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                     ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:411:86: note: in expansion of macro ‘LOG_FORMAT’
+         else if (level==ESP_LOG_WARN )      { esp_log_write(ESP_LOG_WARN,       tag, LOG_FORMAT(W, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+                                                                                      ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:342:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:68:5: note: in expansion of macro ‘ESP_LOGI’
+     ESP_LOGI("AUDIO_MEM", "realloc,new:%p, ptr:%p size:%d, called:0x%08x", p, ptr, size, (intptr_t)__builtin_return_address(0) - 2);
+     ^~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:265:27: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 9 has type ‘long int’ [-Wformat=]
+ #define LOG_COLOR(COLOR)  "\033[0;" COLOR "m"
+                           ^
+libaudio/idf_components/log/include/esp_log.h:269:27: note: in expansion of macro ‘LOG_COLOR’
+ #define LOG_COLOR_W       LOG_COLOR(LOG_COLOR_BROWN)
+                           ^~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:282:37: note: in expansion of macro ‘LOG_COLOR_W’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                     ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:411:86: note: in expansion of macro ‘LOG_FORMAT’
+         else if (level==ESP_LOG_WARN )      { esp_log_write(ESP_LOG_WARN,       tag, LOG_FORMAT(W, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+                                                                                      ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:342:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:68:5: note: in expansion of macro ‘ESP_LOGI’
+     ESP_LOGI("AUDIO_MEM", "realloc,new:%p, ptr:%p size:%d, called:0x%08x", p, ptr, size, (intptr_t)__builtin_return_address(0) - 2);
+     ^~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:68:1: warning: format ‘%d’ expects argument of type ‘int’, but argument 8 has type ‘size_t {aka long unsigned int}’ [-Wformat=]
+     ESP_LOGI("AUDIO_MEM", "realloc,new:%p, ptr:%p size:%d, called:0x%08x", p, ptr, size, (intptr_t)__builtin_return_address(0) - 2);
+ ^
+libaudio/idf_components/log/include/esp_log.h:282:59: note: in definition of macro ‘LOG_FORMAT’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                                           ^~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:342:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:68:5: note: in expansion of macro ‘ESP_LOGI’
+     ESP_LOGI("AUDIO_MEM", "realloc,new:%p, ptr:%p size:%d, called:0x%08x", p, ptr, size, (intptr_t)__builtin_return_address(0) - 2);
+     ^~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:68:1: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 9 has type ‘long int’ [-Wformat=]
+     ESP_LOGI("AUDIO_MEM", "realloc,new:%p, ptr:%p size:%d, called:0x%08x", p, ptr, size, (intptr_t)__builtin_return_address(0) - 2);
+ ^
+libaudio/idf_components/log/include/esp_log.h:282:59: note: in definition of macro ‘LOG_FORMAT’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                                           ^~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:342:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:68:5: note: in expansion of macro ‘ESP_LOGI’
+     ESP_LOGI("AUDIO_MEM", "realloc,new:%p, ptr:%p size:%d, called:0x%08x", p, ptr, size, (intptr_t)__builtin_return_address(0) - 2);
+     ^~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:68:1: warning: format ‘%d’ expects argument of type ‘int’, but argument 8 has type ‘size_t {aka long unsigned int}’ [-Wformat=]
+     ESP_LOGI("AUDIO_MEM", "realloc,new:%p, ptr:%p size:%d, called:0x%08x", p, ptr, size, (intptr_t)__builtin_return_address(0) - 2);
+ ^
+libaudio/idf_components/log/include/esp_log.h:282:59: note: in definition of macro ‘LOG_FORMAT’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                                           ^~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:342:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:68:5: note: in expansion of macro ‘ESP_LOGI’
+     ESP_LOGI("AUDIO_MEM", "realloc,new:%p, ptr:%p size:%d, called:0x%08x", p, ptr, size, (intptr_t)__builtin_return_address(0) - 2);
+     ^~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:68:1: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 9 has type ‘long int’ [-Wformat=]
+     ESP_LOGI("AUDIO_MEM", "realloc,new:%p, ptr:%p size:%d, called:0x%08x", p, ptr, size, (intptr_t)__builtin_return_address(0) - 2);
+ ^
+libaudio/idf_components/log/include/esp_log.h:282:59: note: in definition of macro ‘LOG_FORMAT’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                                           ^~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:342:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:68:5: note: in expansion of macro ‘ESP_LOGI’
+     ESP_LOGI("AUDIO_MEM", "realloc,new:%p, ptr:%p size:%d, called:0x%08x", p, ptr, size, (intptr_t)__builtin_return_address(0) - 2);
+     ^~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:265:27: warning: format ‘%d’ expects argument of type ‘int’, but argument 8 has type ‘size_t {aka long unsigned int}’ [-Wformat=]
+ #define LOG_COLOR(COLOR)  "\033[0;" COLOR "m"
+                           ^
+libaudio/idf_components/log/include/esp_log.h:270:27: note: in expansion of macro ‘LOG_COLOR’
+ #define LOG_COLOR_I       LOG_COLOR(LOG_COLOR_GREEN)
+                           ^~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:282:37: note: in expansion of macro ‘LOG_COLOR_I’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                     ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:414:86: note: in expansion of macro ‘LOG_FORMAT’
+         else                                { esp_log_write(ESP_LOG_INFO,       tag, LOG_FORMAT(I, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+                                                                                      ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:342:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:68:5: note: in expansion of macro ‘ESP_LOGI’
+     ESP_LOGI("AUDIO_MEM", "realloc,new:%p, ptr:%p size:%d, called:0x%08x", p, ptr, size, (intptr_t)__builtin_return_address(0) - 2);
+     ^~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:265:27: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 9 has type ‘long int’ [-Wformat=]
+ #define LOG_COLOR(COLOR)  "\033[0;" COLOR "m"
+                           ^
+libaudio/idf_components/log/include/esp_log.h:270:27: note: in expansion of macro ‘LOG_COLOR’
+ #define LOG_COLOR_I       LOG_COLOR(LOG_COLOR_GREEN)
+                           ^~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:282:37: note: in expansion of macro ‘LOG_COLOR_I’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                     ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:414:86: note: in expansion of macro ‘LOG_FORMAT’
+         else                                { esp_log_write(ESP_LOG_INFO,       tag, LOG_FORMAT(I, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+                                                                                      ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:342:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:68:5: note: in expansion of macro ‘ESP_LOGI’
+     ESP_LOGI("AUDIO_MEM", "realloc,new:%p, ptr:%p size:%d, called:0x%08x", p, ptr, size, (intptr_t)__builtin_return_address(0) - 2);
+     ^~~~~~~~
+libaudio/components/audio_sal/audio_mem.c: In function ‘audio_strdup’:
+libaudio/idf_components/log/include/esp_log.h:265:27: warning: format ‘%d’ expects argument of type ‘int’, but argument 7 has type ‘size_t {aka long unsigned int}’ [-Wformat=]
+ #define LOG_COLOR(COLOR)  "\033[0;" COLOR "m"
+                           ^
+libaudio/idf_components/log/include/esp_log.h:268:27: note: in expansion of macro ‘LOG_COLOR’
+ #define LOG_COLOR_E       LOG_COLOR(LOG_COLOR_RED)
+                           ^~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:282:37: note: in expansion of macro ‘LOG_COLOR_E’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                     ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:410:86: note: in expansion of macro ‘LOG_FORMAT’
+         if (level==ESP_LOG_ERROR )          { esp_log_write(ESP_LOG_ERROR,      tag, LOG_FORMAT(E, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+                                                                                      ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:342:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:80:5: note: in expansion of macro ‘ESP_LOGI’
+     ESP_LOGI("AUDIO_MEM", "strdup:%p, size:%d, called:0x%08x", copy, strlen(copy), (intptr_t)__builtin_return_address(0) - 2);
+     ^~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:265:27: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 8 has type ‘long int’ [-Wformat=]
+ #define LOG_COLOR(COLOR)  "\033[0;" COLOR "m"
+                           ^
+libaudio/idf_components/log/include/esp_log.h:268:27: note: in expansion of macro ‘LOG_COLOR’
+ #define LOG_COLOR_E       LOG_COLOR(LOG_COLOR_RED)
+                           ^~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:282:37: note: in expansion of macro ‘LOG_COLOR_E’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                     ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:410:86: note: in expansion of macro ‘LOG_FORMAT’
+         if (level==ESP_LOG_ERROR )          { esp_log_write(ESP_LOG_ERROR,      tag, LOG_FORMAT(E, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+                                                                                      ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:342:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:80:5: note: in expansion of macro ‘ESP_LOGI’
+     ESP_LOGI("AUDIO_MEM", "strdup:%p, size:%d, called:0x%08x", copy, strlen(copy), (intptr_t)__builtin_return_address(0) - 2);
+     ^~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:265:27: warning: format ‘%d’ expects argument of type ‘int’, but argument 7 has type ‘size_t {aka long unsigned int}’ [-Wformat=]
+ #define LOG_COLOR(COLOR)  "\033[0;" COLOR "m"
+                           ^
+libaudio/idf_components/log/include/esp_log.h:269:27: note: in expansion of macro ‘LOG_COLOR’
+ #define LOG_COLOR_W       LOG_COLOR(LOG_COLOR_BROWN)
+                           ^~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:282:37: note: in expansion of macro ‘LOG_COLOR_W’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                     ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:411:86: note: in expansion of macro ‘LOG_FORMAT’
+         else if (level==ESP_LOG_WARN )      { esp_log_write(ESP_LOG_WARN,       tag, LOG_FORMAT(W, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+                                                                                      ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:342:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:80:5: note: in expansion of macro ‘ESP_LOGI’
+     ESP_LOGI("AUDIO_MEM", "strdup:%p, size:%d, called:0x%08x", copy, strlen(copy), (intptr_t)__builtin_return_address(0) - 2);
+     ^~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:265:27: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 8 has type ‘long int’ [-Wformat=]
+ #define LOG_COLOR(COLOR)  "\033[0;" COLOR "m"
+                           ^
+libaudio/idf_components/log/include/esp_log.h:269:27: note: in expansion of macro ‘LOG_COLOR’
+ #define LOG_COLOR_W       LOG_COLOR(LOG_COLOR_BROWN)
+                           ^~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:282:37: note: in expansion of macro ‘LOG_COLOR_W’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                     ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:411:86: note: in expansion of macro ‘LOG_FORMAT’
+         else if (level==ESP_LOG_WARN )      { esp_log_write(ESP_LOG_WARN,       tag, LOG_FORMAT(W, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+                                                                                      ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:342:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:80:5: note: in expansion of macro ‘ESP_LOGI’
+     ESP_LOGI("AUDIO_MEM", "strdup:%p, size:%d, called:0x%08x", copy, strlen(copy), (intptr_t)__builtin_return_address(0) - 2);
+     ^~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:80:1: warning: format ‘%d’ expects argument of type ‘int’, but argument 7 has type ‘size_t {aka long unsigned int}’ [-Wformat=]
+     ESP_LOGI("AUDIO_MEM", "strdup:%p, size:%d, called:0x%08x", copy, strlen(copy), (intptr_t)__builtin_return_address(0) - 2);
+ ^
+libaudio/idf_components/log/include/esp_log.h:282:59: note: in definition of macro ‘LOG_FORMAT’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                                           ^~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:342:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:80:5: note: in expansion of macro ‘ESP_LOGI’
+     ESP_LOGI("AUDIO_MEM", "strdup:%p, size:%d, called:0x%08x", copy, strlen(copy), (intptr_t)__builtin_return_address(0) - 2);
+     ^~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:80:1: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 8 has type ‘long int’ [-Wformat=]
+     ESP_LOGI("AUDIO_MEM", "strdup:%p, size:%d, called:0x%08x", copy, strlen(copy), (intptr_t)__builtin_return_address(0) - 2);
+ ^
+libaudio/idf_components/log/include/esp_log.h:282:59: note: in definition of macro ‘LOG_FORMAT’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                                           ^~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:342:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:80:5: note: in expansion of macro ‘ESP_LOGI’
+     ESP_LOGI("AUDIO_MEM", "strdup:%p, size:%d, called:0x%08x", copy, strlen(copy), (intptr_t)__builtin_return_address(0) - 2);
+     ^~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:80:1: warning: format ‘%d’ expects argument of type ‘int’, but argument 7 has type ‘size_t {aka long unsigned int}’ [-Wformat=]
+     ESP_LOGI("AUDIO_MEM", "strdup:%p, size:%d, called:0x%08x", copy, strlen(copy), (intptr_t)__builtin_return_address(0) - 2);
+ ^
+libaudio/idf_components/log/include/esp_log.h:282:59: note: in definition of macro ‘LOG_FORMAT’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                                           ^~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:342:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:80:5: note: in expansion of macro ‘ESP_LOGI’
+     ESP_LOGI("AUDIO_MEM", "strdup:%p, size:%d, called:0x%08x", copy, strlen(copy), (intptr_t)__builtin_return_address(0) - 2);
+     ^~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:80:1: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 8 has type ‘long int’ [-Wformat=]
+     ESP_LOGI("AUDIO_MEM", "strdup:%p, size:%d, called:0x%08x", copy, strlen(copy), (intptr_t)__builtin_return_address(0) - 2);
+ ^
+libaudio/idf_components/log/include/esp_log.h:282:59: note: in definition of macro ‘LOG_FORMAT’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                                           ^~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:342:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:80:5: note: in expansion of macro ‘ESP_LOGI’
+     ESP_LOGI("AUDIO_MEM", "strdup:%p, size:%d, called:0x%08x", copy, strlen(copy), (intptr_t)__builtin_return_address(0) - 2);
+     ^~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:265:27: warning: format ‘%d’ expects argument of type ‘int’, but argument 7 has type ‘size_t {aka long unsigned int}’ [-Wformat=]
+ #define LOG_COLOR(COLOR)  "\033[0;" COLOR "m"
+                           ^
+libaudio/idf_components/log/include/esp_log.h:270:27: note: in expansion of macro ‘LOG_COLOR’
+ #define LOG_COLOR_I       LOG_COLOR(LOG_COLOR_GREEN)
+                           ^~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:282:37: note: in expansion of macro ‘LOG_COLOR_I’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                     ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:414:86: note: in expansion of macro ‘LOG_FORMAT’
+         else                                { esp_log_write(ESP_LOG_INFO,       tag, LOG_FORMAT(I, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+                                                                                      ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:342:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:80:5: note: in expansion of macro ‘ESP_LOGI’
+     ESP_LOGI("AUDIO_MEM", "strdup:%p, size:%d, called:0x%08x", copy, strlen(copy), (intptr_t)__builtin_return_address(0) - 2);
+     ^~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:265:27: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 8 has type ‘long int’ [-Wformat=]
+ #define LOG_COLOR(COLOR)  "\033[0;" COLOR "m"
+                           ^
+libaudio/idf_components/log/include/esp_log.h:270:27: note: in expansion of macro ‘LOG_COLOR’
+ #define LOG_COLOR_I       LOG_COLOR(LOG_COLOR_GREEN)
+                           ^~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:282:37: note: in expansion of macro ‘LOG_COLOR_I’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                     ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:414:86: note: in expansion of macro ‘LOG_FORMAT’
+         else                                { esp_log_write(ESP_LOG_INFO,       tag, LOG_FORMAT(I, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+                                                                                      ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:342:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:80:5: note: in expansion of macro ‘ESP_LOGI’
+     ESP_LOGI("AUDIO_MEM", "strdup:%p, size:%d, called:0x%08x", copy, strlen(copy), (intptr_t)__builtin_return_address(0) - 2);
+     ^~~~~~~~
+libaudio/components/audio_sal/audio_mem.c: In function ‘audio_calloc_inner’:
+libaudio/idf_components/log/include/esp_log.h:265:27: warning: format ‘%d’ expects argument of type ‘int’, but argument 7 has type ‘size_t {aka long unsigned int}’ [-Wformat=]
+ #define LOG_COLOR(COLOR)  "\033[0;" COLOR "m"
+                           ^
+libaudio/idf_components/log/include/esp_log.h:268:27: note: in expansion of macro ‘LOG_COLOR’
+ #define LOG_COLOR_E       LOG_COLOR(LOG_COLOR_RED)
+                           ^~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:282:37: note: in expansion of macro ‘LOG_COLOR_E’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                     ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:410:86: note: in expansion of macro ‘LOG_FORMAT’
+         if (level==ESP_LOG_ERROR )          { esp_log_write(ESP_LOG_ERROR,      tag, LOG_FORMAT(E, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+                                                                                      ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:342:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:91:5: note: in expansion of macro ‘ESP_LOGI’
+     ESP_LOGI("AUIDO_MEM", "calloc_inner:%p, size:%d, called:0x%08x", data, size, (intptr_t)__builtin_return_address(0) - 2);
+     ^~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:265:27: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 8 has type ‘long int’ [-Wformat=]
+ #define LOG_COLOR(COLOR)  "\033[0;" COLOR "m"
+                           ^
+libaudio/idf_components/log/include/esp_log.h:268:27: note: in expansion of macro ‘LOG_COLOR’
+ #define LOG_COLOR_E       LOG_COLOR(LOG_COLOR_RED)
+                           ^~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:282:37: note: in expansion of macro ‘LOG_COLOR_E’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                     ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:410:86: note: in expansion of macro ‘LOG_FORMAT’
+         if (level==ESP_LOG_ERROR )          { esp_log_write(ESP_LOG_ERROR,      tag, LOG_FORMAT(E, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+                                                                                      ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:342:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:91:5: note: in expansion of macro ‘ESP_LOGI’
+     ESP_LOGI("AUIDO_MEM", "calloc_inner:%p, size:%d, called:0x%08x", data, size, (intptr_t)__builtin_return_address(0) - 2);
+     ^~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:265:27: warning: format ‘%d’ expects argument of type ‘int’, but argument 7 has type ‘size_t {aka long unsigned int}’ [-Wformat=]
+ #define LOG_COLOR(COLOR)  "\033[0;" COLOR "m"
+                           ^
+libaudio/idf_components/log/include/esp_log.h:269:27: note: in expansion of macro ‘LOG_COLOR’
+ #define LOG_COLOR_W       LOG_COLOR(LOG_COLOR_BROWN)
+                           ^~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:282:37: note: in expansion of macro ‘LOG_COLOR_W’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                     ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:411:86: note: in expansion of macro ‘LOG_FORMAT’
+         else if (level==ESP_LOG_WARN )      { esp_log_write(ESP_LOG_WARN,       tag, LOG_FORMAT(W, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+                                                                                      ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:342:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:91:5: note: in expansion of macro ‘ESP_LOGI’
+     ESP_LOGI("AUIDO_MEM", "calloc_inner:%p, size:%d, called:0x%08x", data, size, (intptr_t)__builtin_return_address(0) - 2);
+     ^~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:265:27: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 8 has type ‘long int’ [-Wformat=]
+ #define LOG_COLOR(COLOR)  "\033[0;" COLOR "m"
+                           ^
+libaudio/idf_components/log/include/esp_log.h:269:27: note: in expansion of macro ‘LOG_COLOR’
+ #define LOG_COLOR_W       LOG_COLOR(LOG_COLOR_BROWN)
+                           ^~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:282:37: note: in expansion of macro ‘LOG_COLOR_W’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                     ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:411:86: note: in expansion of macro ‘LOG_FORMAT’
+         else if (level==ESP_LOG_WARN )      { esp_log_write(ESP_LOG_WARN,       tag, LOG_FORMAT(W, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+                                                                                      ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:342:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:91:5: note: in expansion of macro ‘ESP_LOGI’
+     ESP_LOGI("AUIDO_MEM", "calloc_inner:%p, size:%d, called:0x%08x", data, size, (intptr_t)__builtin_return_address(0) - 2);
+     ^~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:91:1: warning: format ‘%d’ expects argument of type ‘int’, but argument 7 has type ‘size_t {aka long unsigned int}’ [-Wformat=]
+     ESP_LOGI("AUIDO_MEM", "calloc_inner:%p, size:%d, called:0x%08x", data, size, (intptr_t)__builtin_return_address(0) - 2);
+ ^
+libaudio/idf_components/log/include/esp_log.h:282:59: note: in definition of macro ‘LOG_FORMAT’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                                           ^~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:342:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:91:5: note: in expansion of macro ‘ESP_LOGI’
+     ESP_LOGI("AUIDO_MEM", "calloc_inner:%p, size:%d, called:0x%08x", data, size, (intptr_t)__builtin_return_address(0) - 2);
+     ^~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:91:1: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 8 has type ‘long int’ [-Wformat=]
+     ESP_LOGI("AUIDO_MEM", "calloc_inner:%p, size:%d, called:0x%08x", data, size, (intptr_t)__builtin_return_address(0) - 2);
+ ^
+libaudio/idf_components/log/include/esp_log.h:282:59: note: in definition of macro ‘LOG_FORMAT’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                                           ^~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:342:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:91:5: note: in expansion of macro ‘ESP_LOGI’
+     ESP_LOGI("AUIDO_MEM", "calloc_inner:%p, size:%d, called:0x%08x", data, size, (intptr_t)__builtin_return_address(0) - 2);
+     ^~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:91:1: warning: format ‘%d’ expects argument of type ‘int’, but argument 7 has type ‘size_t {aka long unsigned int}’ [-Wformat=]
+     ESP_LOGI("AUIDO_MEM", "calloc_inner:%p, size:%d, called:0x%08x", data, size, (intptr_t)__builtin_return_address(0) - 2);
+ ^
+libaudio/idf_components/log/include/esp_log.h:282:59: note: in definition of macro ‘LOG_FORMAT’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                                           ^~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:342:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:91:5: note: in expansion of macro ‘ESP_LOGI’
+     ESP_LOGI("AUIDO_MEM", "calloc_inner:%p, size:%d, called:0x%08x", data, size, (intptr_t)__builtin_return_address(0) - 2);
+     ^~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:91:1: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 8 has type ‘long int’ [-Wformat=]
+     ESP_LOGI("AUIDO_MEM", "calloc_inner:%p, size:%d, called:0x%08x", data, size, (intptr_t)__builtin_return_address(0) - 2);
+ ^
+libaudio/idf_components/log/include/esp_log.h:282:59: note: in definition of macro ‘LOG_FORMAT’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                                           ^~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:342:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:91:5: note: in expansion of macro ‘ESP_LOGI’
+     ESP_LOGI("AUIDO_MEM", "calloc_inner:%p, size:%d, called:0x%08x", data, size, (intptr_t)__builtin_return_address(0) - 2);
+     ^~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:265:27: warning: format ‘%d’ expects argument of type ‘int’, but argument 7 has type ‘size_t {aka long unsigned int}’ [-Wformat=]
+ #define LOG_COLOR(COLOR)  "\033[0;" COLOR "m"
+                           ^
+libaudio/idf_components/log/include/esp_log.h:270:27: note: in expansion of macro ‘LOG_COLOR’
+ #define LOG_COLOR_I       LOG_COLOR(LOG_COLOR_GREEN)
+                           ^~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:282:37: note: in expansion of macro ‘LOG_COLOR_I’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                     ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:414:86: note: in expansion of macro ‘LOG_FORMAT’
+         else                                { esp_log_write(ESP_LOG_INFO,       tag, LOG_FORMAT(I, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+                                                                                      ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:342:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:91:5: note: in expansion of macro ‘ESP_LOGI’
+     ESP_LOGI("AUIDO_MEM", "calloc_inner:%p, size:%d, called:0x%08x", data, size, (intptr_t)__builtin_return_address(0) - 2);
+     ^~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:265:27: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 8 has type ‘long int’ [-Wformat=]
+ #define LOG_COLOR(COLOR)  "\033[0;" COLOR "m"
+                           ^
+libaudio/idf_components/log/include/esp_log.h:270:27: note: in expansion of macro ‘LOG_COLOR’
+ #define LOG_COLOR_I       LOG_COLOR(LOG_COLOR_GREEN)
+                           ^~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:282:37: note: in expansion of macro ‘LOG_COLOR_I’
+ #define LOG_FORMAT(letter, format)  LOG_COLOR_ ## letter #letter " (%u) %s: " format LOG_RESET_COLOR "\n"
+                                     ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:414:86: note: in expansion of macro ‘LOG_FORMAT’
+         else                                { esp_log_write(ESP_LOG_INFO,       tag, LOG_FORMAT(I, format), esp_log_timestamp(), tag, ##__VA_ARGS__); } \
+                                                                                      ^~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:432:41: note: in expansion of macro ‘ESP_LOG_LEVEL’
+         if ( LOG_LOCAL_LEVEL >= level ) ESP_LOG_LEVEL(level, tag, format, ##__VA_ARGS__); \
+                                         ^~~~~~~~~~~~~
+libaudio/idf_components/log/include/esp_log.h:342:38: note: in expansion of macro ‘ESP_LOG_LEVEL_LOCAL’
+ #define ESP_LOGI( tag, format, ... ) ESP_LOG_LEVEL_LOCAL(ESP_LOG_INFO,    tag, format, ##__VA_ARGS__)
+                                      ^~~~~~~~~~~~~~~~~~~
+libaudio/components/audio_sal/audio_mem.c:91:5: note: in expansion of macro ‘ESP_LOGI’
+     ESP_LOGI("AUIDO_MEM", "calloc_inner:%p, size:%d, called:0x%08x", data, size, (intptr_t)__builtin_return_address(0) - 2);
+     ^~~~~~~~
